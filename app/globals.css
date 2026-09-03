@@ -345,15 +345,6 @@
   text-transform: uppercase;
 }
 
-.hero__eyebrow span {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  border-radius: 999px;
-  background: #ec1c24;
-  box-shadow: 0 0 0 7px rgb(236 28 36 / 8%);
-}
-
 .hero h1 {
   max-width: 750px;
   margin: 0;

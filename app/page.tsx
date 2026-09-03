@@ -251,7 +251,6 @@ export default function HomePage() {
         <div className="hero__content">
           <div className="hero__copy">
             <p className="hero__eyebrow">
-              <span aria-hidden="true" />
               Vaše jistota na realitním trhu
             </p>
             <h1 id="hero-title">
