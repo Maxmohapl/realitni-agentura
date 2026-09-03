@@ -291,10 +291,10 @@
 .hero__cityline {
   position: absolute;
   right: 0;
-  bottom: -118px;
+  bottom: -148px;
   left: 0;
   width: 100%;
-  height: clamp(165px, 19vw, 285px);
+  height: clamp(160px, 18vw, 260px);
   object-fit: cover;
   object-position: center bottom;
   opacity: 0.62;
@@ -388,7 +388,7 @@
 
 .realitni-team {
   position: absolute;
-  inset: auto 0 -8px 0;
+  inset: auto 0 126px 0;
   z-index: 20;
   height: clamp(500px, 44vw, 720px);
   isolation: isolate;

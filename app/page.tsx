@@ -40,7 +40,7 @@ const agents: Agent[] = [
     url: "/makleri/jaroslav-bejdak",
     position: {
       left: "34%",
-      bottom: "-14%",
+      bottom: "0%",
       width: "23%",
       zIndex: 13,
       cardAlign: "left",
@@ -56,7 +56,7 @@ const agents: Agent[] = [
     url: "/makleri/iva-dokoupilova",
     position: {
       left: "43%",
-      bottom: "-15%",
+      bottom: "0%",
       width: "21.5%",
       zIndex: 12,
       cardAlign: "center",
@@ -72,7 +72,7 @@ const agents: Agent[] = [
     url: "/makleri/leona-kocikova",
     position: {
       left: "52%",
-      bottom: "-14%",
+      bottom: "0%",
       width: "22%",
       zIndex: 14,
       cardAlign: "center",
@@ -88,7 +88,7 @@ const agents: Agent[] = [
     url: "/makleri/radek-mezl",
     position: {
       left: "61%",
-      bottom: "-12.5%",
+      bottom: "0%",
       width: "23.5%",
       zIndex: 18,
       cardAlign: "center",
@@ -104,7 +104,7 @@ const agents: Agent[] = [
     url: "/makleri/tomas-prochazka",
     position: {
       left: "70%",
-      bottom: "-13.5%",
+      bottom: "0%",
       width: "21%",
       zIndex: 15,
       cardAlign: "center",
@@ -120,7 +120,7 @@ const agents: Agent[] = [
     url: "/makleri/eva-prochazkova",
     position: {
       left: "79%",
-      bottom: "-15.5%",
+      bottom: "0%",
       width: "22.2%",
       zIndex: 16,
       cardAlign: "right",
@@ -136,7 +136,7 @@ const agents: Agent[] = [
     url: "/makleri/anna-uricarova",
     position: {
       left: "88%",
-      bottom: "-15.5%",
+      bottom: "0%",
       width: "23%",
       zIndex: 17,
       cardAlign: "right",
