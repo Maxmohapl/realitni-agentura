@@ -291,7 +291,7 @@
 .hero__cityline {
   position: absolute;
   right: 0;
-  bottom: 34px;
+  bottom: 50px;
   left: 0;
   width: 100%;
   height: clamp(190px, 21vw, 315px);
@@ -299,8 +299,8 @@
   object-position: center bottom;
   opacity: 0.62;
   user-select: none;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 82%, transparent 100%);
 }
 
 .hero__content {
