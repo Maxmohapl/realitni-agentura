@@ -3,8 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
+  Building2,
+  Check,
+  ChevronLeft,
   Handshake,
   Home,
+  KeyRound,
   Mail,
   Menu,
   Phone,
@@ -175,6 +179,57 @@ const stats = [
     icon: TrendingUp,
     value: "15+ let",
     label: "Zkušeností na trhu s nemovitostmi",
+  },
+];
+
+const services = [
+  {
+    title: "Prodej nemovitosti",
+    description: "Prodejte za správnou cenu a bez starostí.",
+    icon: Home,
+    accent: "red",
+    href: "#prodej",
+    points: [
+      "Ocenění a analýza trhu",
+      "Příprava nemovitosti k prodeji",
+      "Profesionální prezentace",
+      "Propagace online i offline",
+      "Prohlídky a komunikace",
+      "Právní servis a smlouvy",
+      "Bezpečné předání a převody",
+    ],
+  },
+  {
+    title: "Koupě nemovitosti",
+    description: "Najděte nemovitost bez zbytečného rizika.",
+    icon: KeyRound,
+    accent: "blue",
+    href: "#koupe",
+    points: [
+      "Vyhledání nemovitosti",
+      "Analýza lokality a dostupnosti",
+      "Konzultace financování a hypotéky",
+      "Prověření technického stavu",
+      "Právní kontrola a smlouvy",
+      "Přepis energií a služeb",
+      "Předání nemovitosti",
+    ],
+  },
+  {
+    title: "Pronájem nemovitosti",
+    description: "Pronajměte bezpečně a správnému člověku.",
+    icon: Building2,
+    accent: "mixed",
+    href: "#pronajem",
+    points: [
+      "Stanovení nájemného",
+      "Příprava nabídky a prezentace",
+      "Vyhledání a prověření nájemce",
+      "Organizace prohlídek",
+      "Nájemní smlouvy a dokumentace",
+      "Předávací protokol a měřidla",
+      "Přepisy energií a služeb",
+    ],
   },
 ];
 
@@ -381,6 +436,61 @@ export default function HomePage() {
             );
           })}
         </aside>
+      </section>
+
+      <section className="services-section" id="sluzby" aria-labelledby="services-title">
+        <div className="services-shell">
+          <p className="section-eyebrow">Kompletní realitní servis</p>
+          <h2 id="services-title">
+            Od prvního rozhodnutí až po předání <span>klíčů.</span>
+          </h2>
+          <p className="services-intro">
+            Ať prodáváte, kupujete nebo pronajímáte, provedeme vás celým procesem.
+            Od správné ceny a prezentace až po smlouvy, financování a bezpečné
+            předání.
+          </p>
+
+          <div className="service-grid">
+            {services.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <a
+                  className={`service-card service-card--${service.accent}`}
+                  href={service.href}
+                  key={service.title}
+                >
+                  <div className="service-card__default">
+                    <Icon className="service-card__icon" size={68} strokeWidth={1.9} />
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                    <span className="service-card__button" aria-hidden="true">
+                      <ArrowRight size={18} />
+                    </span>
+                  </div>
+
+                  <div className="service-card__hover" aria-hidden="true">
+                    <div className="service-card__hover-title">
+                      <Icon className="service-card__hover-icon" size={54} strokeWidth={1.9} />
+                      <h3>{service.title}</h3>
+                    </div>
+                    <ul>
+                      {service.points.map((point) => (
+                        <li key={point}>
+                          <Check size={15} />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="service-card__back">
+                      <ChevronLeft size={18} />
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
       </section>
     </main>
   );
