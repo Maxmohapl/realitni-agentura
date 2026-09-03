@@ -274,10 +274,11 @@
 
 .hero__watermark {
   position: absolute;
-  right: clamp(48px, 5vw, 96px);
-  top: clamp(8px, 2vw, 34px);
+  right: 0;
+  top: 50%;
   width: clamp(720px, 54vw, 1040px);
   opacity: 0.95;
+  transform: translateY(-50%);
 }
 
 .hero__watermark img {
@@ -294,8 +295,8 @@
   bottom: 50px;
   left: 0;
   width: 100%;
-  height: clamp(190px, 21vw, 315px);
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center bottom;
   opacity: 0.62;
   user-select: none;
