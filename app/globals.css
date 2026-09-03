@@ -401,6 +401,7 @@
   z-index: var(--agent-z);
   width: var(--agent-width);
   min-width: 150px;
+  pointer-events: none;
   transform: translateX(-50%);
 }
 
@@ -414,6 +415,7 @@
   display: block;
   width: 100%;
   outline: none;
+  pointer-events: auto;
 }
 
 .agent__link:focus-visible .agent__image {
