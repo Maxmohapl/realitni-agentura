@@ -172,35 +172,14 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   width: fit-content;
-  font-weight: 850;
-  text-transform: uppercase;
-  color: #ec1c24;
-  letter-spacing: 0;
 }
 
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  border: 5px solid #1f6fd1;
-  border-bottom-color: #ec1c24;
-  border-left-color: #ec1c24;
-  border-radius: 999px;
-  color: #1f6fd1;
-  transform: rotate(-10deg);
-}
-
-.brand__mark svg {
-  transform: rotate(10deg);
-}
-
-.brand__text {
-  display: grid;
-  line-height: 0.95;
-  font-size: clamp(1.25rem, 1.45vw, 1.75rem);
+.brand img {
+  display: block;
+  width: clamp(178px, 14.4vw, 238px);
+  height: auto;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -678,18 +657,8 @@
     min-height: 74px;
   }
 
-  .brand {
-    gap: 9px;
-  }
-
-  .brand__mark {
-    width: 44px;
-    height: 44px;
-    border-width: 4px;
-  }
-
-  .brand__text {
-    font-size: 1.03rem;
+  .brand img {
+    width: clamp(142px, 45vw, 176px);
   }
 
   .header-cta {

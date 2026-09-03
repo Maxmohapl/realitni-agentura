@@ -214,13 +214,7 @@ export default function HomePage() {
     <main className="site-shell">
       <header className="site-header">
         <a className="brand" href="/" aria-label="Realitní Agentura">
-          <span className="brand__mark" aria-hidden="true">
-            <Home size={26} strokeWidth={2.4} />
-          </span>
-          <span className="brand__text">
-            <span>Realitní</span>
-            <span>Agentura</span>
-          </span>
+          <img src="/images/hero/navbar-logo.png" alt="Realitní Agentura" />
         </a>
 
         <nav className="site-nav" aria-label="Hlavní navigace">
