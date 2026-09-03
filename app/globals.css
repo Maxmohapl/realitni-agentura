@@ -304,19 +304,17 @@
 
 .hero__cityline {
   position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  height: 30%;
-  opacity: 0.58;
-  background:
-    linear-gradient(180deg, transparent 0 40%, rgb(255 255 255 / 80%) 100%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 72px,
-      rgb(31 111 209 / 7%) 72px 108px,
-      transparent 108px 176px
-    );
-  filter: blur(0.2px);
+  right: 0;
+  bottom: -42px;
+  left: 0;
+  width: 100%;
+  height: clamp(230px, 28vw, 385px);
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0.72;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
 }
 
 .hero__content {
@@ -716,7 +714,13 @@
   }
 
   .hero__cityline {
-    height: 22%;
+    bottom: -34px;
+    height: 190px;
+    min-width: 920px;
+    width: 245vw;
+    left: 50%;
+    opacity: 0.48;
+    transform: translateX(-50%);
   }
 
   .hero__content {

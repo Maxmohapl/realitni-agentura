@@ -245,7 +245,11 @@ export default function HomePage() {
           <div className="hero__watermark">
             <img src="/images/hero/team-mark.png" alt="" />
           </div>
-          <div className="hero__cityline" />
+          <img
+            className="hero__cityline"
+            src="/images/hero/olomouc-skyline.png"
+            alt=""
+          />
         </div>
 
         <div className="hero__content">
