@@ -291,7 +291,7 @@
 .hero__cityline {
   position: absolute;
   right: 0;
-  bottom: -148px;
+  bottom: -74px;
   left: 0;
   width: 100%;
   height: clamp(160px, 18vw, 260px);
