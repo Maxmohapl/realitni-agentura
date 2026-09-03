@@ -243,7 +243,7 @@ export default function HomePage() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__background" aria-hidden="true">
           <div className="hero__watermark">
-            <Home size={310} strokeWidth={1.1} />
+            <img src="/images/hero/team-mark.png" alt="" />
           </div>
           <div className="hero__cityline" />
         </div>
@@ -270,13 +270,6 @@ export default function HomePage() {
                 <ArrowRight size={17} aria-hidden="true" />
               </a>
             </div>
-          </div>
-
-          <div className="team-note" aria-hidden="true">
-            Tým, který
-            <br />
-            je tu pro vás
-            <span />
           </div>
 
           <div

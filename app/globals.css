@@ -288,21 +288,18 @@
 
 .hero__watermark {
   position: absolute;
-  right: max(4vw, 56px);
-  top: 4%;
-  display: grid;
-  place-items: center;
-  width: clamp(440px, 40vw, 760px);
-  height: clamp(440px, 40vw, 760px);
-  border: clamp(42px, 4.5vw, 86px) solid rgb(31 111 209 / 7%);
-  border-radius: 999px;
-  color: rgb(236 28 36 / 8%);
+  right: clamp(-42px, -2vw, -18px);
+  top: clamp(-48px, -2vw, -18px);
+  width: clamp(610px, 55vw, 1000px);
+  opacity: 0.95;
 }
 
-.hero__watermark svg {
-  width: 48%;
-  height: 48%;
-  color: rgb(31 111 209 / 12%);
+.hero__watermark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
 }
 
 .hero__cityline {
@@ -411,30 +408,6 @@
   border-color: #1f6fd1;
   color: #0d2340;
   transform: translateY(-1px);
-}
-
-.team-note {
-  position: absolute;
-  top: clamp(130px, 18vh, 218px);
-  right: clamp(110px, 11vw, 205px);
-  z-index: 16;
-  color: #4b8fe6;
-  font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: clamp(1.65rem, 2.35vw, 3.1rem);
-  line-height: 1.2;
-  transform: rotate(-7deg);
-}
-
-.team-note span {
-  position: absolute;
-  right: -38px;
-  bottom: -31px;
-  width: 74px;
-  height: 42px;
-  border-right: 4px solid #4b8fe6;
-  border-bottom: 4px solid #4b8fe6;
-  border-radius: 0 0 52px;
-  transform: rotate(20deg);
 }
 
 .realitni-team {
@@ -696,10 +669,6 @@
     max-width: 470px;
   }
 
-  .team-note {
-    right: 6%;
-  }
-
   .realitni-team {
     bottom: 72px;
   }
@@ -749,11 +718,10 @@
   }
 
   .hero__watermark {
-    top: 170px;
-    right: -160px;
-    width: 430px;
-    height: 430px;
-    border-width: 42px;
+    top: 218px;
+    right: -265px;
+    width: 640px;
+    opacity: 0.36;
   }
 
   .hero__cityline {
@@ -795,10 +763,6 @@
     min-height: 50px;
     padding-inline: 18px;
     font-size: 0.8rem;
-  }
-
-  .team-note {
-    display: none;
   }
 
   .realitni-team {
