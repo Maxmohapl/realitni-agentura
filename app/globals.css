@@ -291,10 +291,10 @@
 .hero__cityline {
   position: absolute;
   right: 0;
-  bottom: -74px;
+  bottom: 34px;
   left: 0;
   width: 100%;
-  height: clamp(160px, 18vw, 260px);
+  height: clamp(190px, 21vw, 315px);
   object-fit: cover;
   object-position: center bottom;
   opacity: 0.62;
