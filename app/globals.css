@@ -157,7 +157,9 @@
 }
 
 .site-header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
   z-index: 100;
   display: grid;
   grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) auto;
@@ -165,8 +167,8 @@
   gap: clamp(18px, 2.2vw, 36px);
   width: min(100% - 48px, 1620px);
   min-height: 92px;
-  margin: 0 auto;
-  border-bottom: 1px solid rgb(13 35 64 / 9%);
+  transform: translateX(-50%);
+  background: transparent;
 }
 
 .brand {
@@ -224,15 +226,20 @@
 }
 
 .header-cta {
-  min-height: 54px;
-  padding: 0 29px;
-  color: #fff;
-  background: #ec1c24;
-  box-shadow: 0 14px 24px rgb(236 28 36 / 18%);
+  min-height: auto;
+  padding: 10px 0;
+  color: #263247;
+  background: transparent;
+  box-shadow: none;
 }
 
 .header-cta:hover,
 .header-cta:focus-visible,
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: #ec1c24;
+}
+
 .button--primary:hover,
 .button--primary:focus-visible,
 .agent__cta:hover,
@@ -254,8 +261,8 @@
 
 .hero {
   position: relative;
-  min-height: calc(100svh - 92px);
-  padding: clamp(44px, 5.6vw, 78px) 24px 38px;
+  min-height: 100svh;
+  padding: clamp(136px, 12vw, 170px) 24px 38px;
 }
 
 .hero__background {
@@ -617,12 +624,12 @@
   }
 
   .header-cta {
-    min-height: 48px;
-    padding-inline: 21px;
+    min-height: auto;
+    padding-inline: 0;
   }
 
   .hero {
-    padding-top: 38px;
+    padding-top: 126px;
   }
 
   .hero__content {
@@ -672,7 +679,7 @@
 
   .hero {
     min-height: auto;
-    padding: 28px 0 26px;
+    padding: 100px 0 26px;
   }
 
   .hero__watermark {
