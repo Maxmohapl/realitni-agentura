@@ -722,27 +722,9 @@ export default function HomePage() {
       <section
         className="properties-section"
         id="nabidka"
-        aria-labelledby="properties-title"
+        aria-label="Nabídka nemovitostí"
       >
         <div className="properties-shell">
-          <div className="properties-intro">
-            <div>
-              <p className="properties-eyebrow">Vybrané nemovitosti</p>
-              <h2 id="properties-title">
-                Vybrané nabídky <span>nemovitostí.</span>
-              </h2>
-              <p>
-                Prohlédněte si aktuální nabídku nemovitostí, které pro vás právě
-                máme. Možná mezi nimi najdete tu pravou.
-              </p>
-            </div>
-
-            <a className="properties-link" href="#nabidka">
-              Všechny nemovitosti
-              <ArrowRight size={17} aria-hidden="true" />
-            </a>
-          </div>
-
           <div className="property-filters" aria-label="Filtrovat nemovitosti">
             {(['Vše', ...propertyCategories] as PropertyFilter[]).map(
               (filter) => {

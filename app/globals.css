@@ -827,7 +827,7 @@
 .properties-section {
   position: relative;
   isolation: isolate;
-  padding: 108px 24px 210px;
+  padding: 72px 24px 210px;
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 58%, #eef6ff 100%);
 }
@@ -837,45 +837,6 @@
   z-index: 2;
   width: min(100%, 1620px);
   margin: 0 auto;
-}
-
-.properties-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 760px) auto;
-  align-items: end;
-  gap: 32px;
-}
-
-.properties-eyebrow {
-  margin: 0 0 18px;
-  color: #1f6fd1;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.properties-intro h2 {
-  max-width: 760px;
-  margin: 0;
-  color: #0f1b2d;
-  font-size: clamp(2.05rem, 3.05vw, 3.45rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: 0;
-}
-
-.properties-intro h2 span {
-  color: #ec1c24;
-}
-
-.properties-intro p {
-  max-width: 650px;
-  margin: 20px 0 0;
-  color: #526176;
-  font-size: clamp(0.98rem, 1.08vw, 1.15rem);
-  font-weight: 500;
-  line-height: 1.62;
 }
 
 .properties-link {
@@ -904,7 +865,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 42px;
+  margin-top: 0;
 }
 
 .property-filter {
@@ -1263,11 +1224,6 @@
 
   .service-grid {
     grid-template-columns: 1fr;
-  }
-
-  .properties-intro {
-    grid-template-columns: 1fr;
-    align-items: start;
   }
 
   .properties-grid {
