@@ -521,15 +521,6 @@ export default function HomePage() {
               Pomáháme lidem najít nový domov, výhodně prodat nemovitost nebo
               bezpečně investovat. Profesionálně, lidsky a s výsledky.
             </p>
-            <div className="hero__actions">
-              <a className="button button--primary" href="#kontakt">
-                Poptat spolupráci
-              </a>
-              <a className="button button--outline" href="#sluzby">
-                Naše služby
-                <ArrowRight size={17} aria-hidden="true" />
-              </a>
-            </div>
           </div>
 
           <div
