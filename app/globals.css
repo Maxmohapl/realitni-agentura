@@ -828,7 +828,7 @@
 .properties-section {
   position: relative;
   isolation: isolate;
-  padding: 72px 24px 210px;
+  padding: 72px 24px 330px;
   overflow: hidden;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 58%, #eef6ff 100%);
 }
@@ -1114,7 +1114,7 @@
 
 .properties-slogan {
   right: max(24px, calc((100vw - 1620px) / 2));
-  bottom: 78px;
+  bottom: 185px;
   width: clamp(260px, 22vw, 390px);
   height: auto;
   opacity: 0.92;
@@ -1480,7 +1480,7 @@
   }
 
   .properties-section {
-    padding: 80px 16px 150px;
+    padding: 80px 16px 255px;
   }
 
   .property-filters {
@@ -1515,7 +1515,7 @@
 
   .properties-slogan {
     right: 18px;
-    bottom: 52px;
+    bottom: 135px;
     width: min(64vw, 250px);
   }
 }
