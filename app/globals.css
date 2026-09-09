@@ -1100,19 +1100,22 @@
 }
 
 .properties-cityline {
-  right: 0;
+  right: auto;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 190px;
-  object-fit: fill;
+  left: 50%;
+  width: max(100vw, 1180px);
+  max-width: 2172px;
+  height: auto;
+  object-fit: contain;
+  object-position: center bottom;
   opacity: 0.92;
+  transform: translateX(-50%);
 }
 
 .properties-slogan {
   right: max(24px, calc((100vw - 1620px) / 2));
-  bottom: 88px;
-  width: clamp(170px, 13vw, 240px);
+  bottom: 78px;
+  width: clamp(260px, 22vw, 390px);
   height: auto;
   opacity: 0.92;
 }
@@ -1504,17 +1507,16 @@
   }
 
   .properties-cityline {
-    height: 120px;
-    min-width: 760px;
-    width: 190vw;
+    width: max(190vw, 760px);
+    max-width: 2172px;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .properties-slogan {
     right: 18px;
-    bottom: 56px;
-    width: 150px;
+    bottom: 52px;
+    width: min(64vw, 250px);
   }
 }
 
