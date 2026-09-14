@@ -8,12 +8,12 @@ import {
   Handshake,
   Home,
   Mail,
-  Menu,
   Phone,
   TrendingUp,
   UsersRound,
 } from 'lucide-react';
 import PropertyListings from './PropertyListings';
+import SiteHeader from './SiteHeader';
 
 type Agent = {
   id: string;
@@ -147,17 +147,6 @@ const agents: Agent[] = [
   },
 ];
 
-const navItems = [
-  'Nabídka',
-  'Naše služby',
-  'O nás',
-  'Náš tým',
-  'Reference',
-  'Financování',
-  'Projekty',
-  'Kontakt',
-];
-
 const stats = [
   {
     icon: Home,
@@ -232,13 +221,6 @@ const services = [
   },
 ];
 
-const toHash = (value: string) =>
-  `#${value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replaceAll(' ', '-')}`;
-
 export default function HomePage() {
   const [activeAgent, setActiveAgent] = useState<string | null>(null);
   const lastPointerType = useRef<string>('mouse');
@@ -266,27 +248,7 @@ export default function HomePage() {
 
   return (
     <main className="site-shell">
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="Realitní Agentura">
-          <img src="/images/hero/navbar-logo.png" alt="Realitní Agentura" />
-        </a>
-
-        <nav className="site-nav" aria-label="Hlavní navigace">
-          {navItems.map((item) => (
-            <a href={toHash(item)} key={item}>
-              {item}
-            </a>
-          ))}
-        </nav>
-
-        <a className="header-cta" href="#nabidka">
-          Nemovitosti
-        </a>
-
-        <button className="menu-button" type="button" aria-label="Otevřít menu">
-          <Menu size={23} />
-        </button>
-      </header>
+      <SiteHeader currentPath="home" />
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__background" aria-hidden="true">
