@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ArrowDown,
   ArrowRight,
   Check,
   ChevronLeft,
@@ -14,6 +13,7 @@ import {
   TrendingUp,
   UsersRound,
 } from 'lucide-react';
+import PropertyListings from './PropertyListings';
 
 type Agent = {
   id: string;
@@ -30,27 +30,6 @@ type Agent = {
     zIndex: number;
     cardAlign?: 'left' | 'center' | 'right';
   };
-};
-
-type PropertyCategory =
-  | 'Byty'
-  | 'Domy'
-  | 'Pozemky'
-  | 'Komerční'
-  | 'Ostatní'
-  | 'Projekty';
-
-type PropertyFilter = 'Vše' | PropertyCategory;
-
-type PropertyListing = {
-  id: number;
-  title: string;
-  location: string;
-  category: PropertyCategory;
-  metadata: string;
-  price: string;
-  badge: 'Prodej' | 'Pronájem';
-  image: string;
 };
 
 const agents: Agent[] = [
@@ -253,161 +232,6 @@ const services = [
   },
 ];
 
-const propertyPageSize = 6;
-
-const propertyCategories: PropertyCategory[] = [
-  'Byty',
-  'Domy',
-  'Pozemky',
-  'Komerční',
-  'Ostatní',
-  'Projekty',
-];
-
-const propertyCategoryIcons: Record<PropertyCategory, string> = {
-  Byty: '/assets/realitni/icon_filter_byty.png',
-  Domy: '/assets/realitni/icon_filter_domy.png',
-  Pozemky: '/assets/realitni/icon_filter_pozemky.png',
-  Komerční: '/assets/realitni/icon_filter_komercni.png',
-  Ostatní: '/assets/realitni/icon_filter_ostatni.png',
-  Projekty: '/assets/realitni/icon_filter_projekty.png',
-};
-
-const propertyListings: PropertyListing[] = [
-  {
-    id: 1,
-    title: 'Pronájem bytu 3+1, 94 m²',
-    location: 'Ruda nad Moravou - Hrabenov',
-    category: 'Byty',
-    metadata: 'Byt | 94 m² | 3+1',
-    price: '15 000 Kč/měsíc',
-    badge: 'Pronájem',
-    image:
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 2,
-    title: 'Rodinný dům 5+1, 160 m²',
-    location: 'Sudkov',
-    category: 'Domy',
-    metadata: 'Dům | 160 m² | 5+1',
-    price: '5 490 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 3,
-    title: 'Pronájem bytu 2+kk, 48 m²',
-    location: 'Lazebnická, Mohelnice',
-    category: 'Byty',
-    metadata: 'Byt | 48 m² | 2+kk',
-    price: '11 000 Kč/měsíc',
-    badge: 'Pronájem',
-    image:
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 4,
-    title: 'Byt 2+kk, 50 m²',
-    location: 'Olomouc - Nové Sady',
-    category: 'Byty',
-    metadata: 'Byt | 50 m² | 2+kk',
-    price: '4 790 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 5,
-    title: 'Pronájem bytu 3+kk, 70 m²',
-    location: 'Olomouc - Povel',
-    category: 'Byty',
-    metadata: 'Byt | 70 m² | 3+kk',
-    price: '18 500 Kč/měsíc',
-    badge: 'Pronájem',
-    image:
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 6,
-    title: 'Stavební pozemek 969 m²',
-    location: 'Dolany u Olomouce',
-    category: 'Pozemky',
-    metadata: 'Pozemek | 969 m²',
-    price: '3 990 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 7,
-    title: 'Kancelářské prostory 112 m²',
-    location: 'Olomouc - centrum',
-    category: 'Komerční',
-    metadata: 'Komerční | 112 m² | kanceláře',
-    price: '29 000 Kč/měsíc',
-    badge: 'Pronájem',
-    image:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 8,
-    title: 'Novostavba domu 4+kk',
-    location: 'Velká Bystřice',
-    category: 'Projekty',
-    metadata: 'Projekt | 128 m² | 4+kk',
-    price: 'od 7 850 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 9,
-    title: 'Řadový dům se zahradou',
-    location: 'Litovel',
-    category: 'Domy',
-    metadata: 'Dům | 142 m² | 4+1',
-    price: '6 290 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 10,
-    title: 'Garážové stání v rezidenci',
-    location: 'Olomouc - Neředín',
-    category: 'Ostatní',
-    metadata: 'Ostatní | 18 m² | garážové stání',
-    price: '590 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 11,
-    title: 'Pozemek pro rodinný dům',
-    location: 'Bohuňovice',
-    category: 'Pozemky',
-    metadata: 'Pozemek | 1 184 m²',
-    price: '4 650 000 Kč',
-    badge: 'Prodej',
-    image:
-      'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80',
-  },
-  {
-    id: 12,
-    title: 'Obchodní prostor u hlavní třídy',
-    location: 'Šumperk',
-    category: 'Komerční',
-    metadata: 'Komerční | 86 m² | obchod',
-    price: '21 500 Kč/měsíc',
-    badge: 'Pronájem',
-    image:
-      'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&w=900&q=80',
-  },
-];
-
 const toHash = (value: string) =>
   `#${value
     .toLowerCase()
@@ -417,10 +241,6 @@ const toHash = (value: string) =>
 
 export default function HomePage() {
   const [activeAgent, setActiveAgent] = useState<string | null>(null);
-  const [activePropertyFilter, setActivePropertyFilter] =
-    useState<PropertyFilter>('Vše');
-  const [visiblePropertyCount, setVisiblePropertyCount] =
-    useState(propertyPageSize);
   const lastPointerType = useRef<string>('mouse');
 
   useEffect(() => {
@@ -443,37 +263,6 @@ export default function HomePage() {
     () => agents.find((agent) => agent.id === activeAgent)?.name,
     [activeAgent],
   );
-
-  const propertyCategoryCounts = useMemo(() => {
-    return propertyCategories.reduce(
-      (counts, category) => ({
-        ...counts,
-        [category]: propertyListings.filter(
-          (property) => property.category === category,
-        ).length,
-      }),
-      {} as Record<PropertyCategory, number>,
-    );
-  }, []);
-
-  const filteredProperties = useMemo(() => {
-    if (activePropertyFilter === 'Vše') {
-      return propertyListings;
-    }
-
-    return propertyListings.filter(
-      (property) => property.category === activePropertyFilter,
-    );
-  }, [activePropertyFilter]);
-
-  const visibleProperties = filteredProperties.slice(0, visiblePropertyCount);
-  const canLoadMoreProperties =
-    visiblePropertyCount < filteredProperties.length;
-
-  const selectPropertyFilter = (filter: PropertyFilter) => {
-    setActivePropertyFilter(filter);
-    setVisiblePropertyCount(propertyPageSize);
-  };
 
   return (
     <main className="site-shell">
@@ -710,124 +499,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        className="properties-section"
-        id="nabidka"
-        aria-label="Nabídka nemovitostí"
-      >
-        <div className="properties-shell">
-          <div className="property-filters" aria-label="Filtrovat nemovitosti">
-            {(['Vše', ...propertyCategories] as PropertyFilter[]).map(
-              (filter) => {
-                const isActive = activePropertyFilter === filter;
-                const count =
-                  filter === 'Vše'
-                    ? propertyListings.length
-                    : propertyCategoryCounts[filter];
-
-                return (
-                  <button
-                    className={`property-filter ${isActive ? 'property-filter--active' : ''}`}
-                    type="button"
-                    aria-pressed={isActive}
-                    key={filter}
-                    onClick={() => selectPropertyFilter(filter)}
-                  >
-                    {filter !== 'Vše' && (
-                      <img src={propertyCategoryIcons[filter]} alt="" />
-                    )}
-                    <span>{filter}</span>
-                    <small>{count}</small>
-                  </button>
-                );
-              },
-            )}
-          </div>
-
-          <div className="properties-grid">
-            {visibleProperties.map((property, index) => (
-              <article
-                className="property-card"
-                key={`${activePropertyFilter}-${property.id}`}
-                style={
-                  {
-                    '--property-delay': `${Math.min(index, 5) * 55}ms`,
-                  } as React.CSSProperties
-                }
-              >
-                <div className="property-card__media">
-                  <img src={property.image} alt={property.title} />
-                  <span className="property-card__badge">{property.badge}</span>
-                  <button
-                    className="property-card__favorite"
-                    type="button"
-                    aria-label={`Přidat do oblíbených: ${property.title}`}
-                  >
-                    <img
-                      src="/assets/realitni/icon_favorite_heart.png"
-                      alt=""
-                    />
-                  </button>
-                </div>
-
-                <div className="property-card__body">
-                  <h3>{property.title}</h3>
-                  <p className="property-card__location">
-                    <img src="/assets/realitni/icon_location_pin.png" alt="" />
-                    <span>{property.location}</span>
-                  </p>
-                  <p className="property-card__meta">{property.metadata}</p>
-                  <p className="property-card__price">{property.price}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="properties-actions">
-            <p>
-              Zobrazeno {visibleProperties.length} z {filteredProperties.length}{' '}
-              nabídek
-            </p>
-            {canLoadMoreProperties && (
-              <button
-                className="properties-load"
-                type="button"
-                onClick={() =>
-                  setVisiblePropertyCount((current) =>
-                    Math.min(
-                      current + propertyPageSize,
-                      filteredProperties.length,
-                    ),
-                  )
-                }
-              >
-                Načíst další nabídky
-                <ArrowDown size={17} aria-hidden="true" />
-              </button>
-            )}
-            <a
-              className="properties-link properties-link--bottom"
-              href="#nabidka"
-            >
-              Všechny nemovitosti
-              <ArrowRight size={17} aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-
-        <img
-          className="properties-cityline"
-          src="/assets/realitni/01_city_olomouc_lineart.png"
-          alt=""
-          aria-hidden="true"
-        />
-        <img
-          className="properties-slogan"
-          src="/assets/realitni/02_slogan_vas_domov_nase_starost.png"
-          alt=""
-          aria-hidden="true"
-        />
-      </section>
+      <PropertyListings mode="preview" />
     </main>
   );
 }
