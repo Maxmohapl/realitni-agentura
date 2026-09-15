@@ -1,15 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  ArrowLeft,
-  ArrowRight,
-  BarChart3,
-  Camera,
-  FileText,
-  Home,
-  KeyRound,
-  Star,
-  UsersRound,
-} from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
 
 export const metadata: Metadata = {
@@ -40,9 +30,12 @@ export default function ServicesPage() {
               <ArrowRight size={22} aria-hidden="true" />
             </a>
 
-            <div className="services-hero__note" aria-hidden="true">
-              <span>Váš domov naše starost</span>
-            </div>
+            <img
+              className="services-hero__note"
+              src="/images/services/note-hero.png"
+              alt=""
+              aria-hidden="true"
+            />
           </div>
 
           <div className="services-hero__visual" aria-hidden="true">
@@ -53,12 +46,12 @@ export default function ServicesPage() {
             />
             <img
               className="services-hero__image"
-              src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=86"
+              src="/images/services/hero-house.png"
               alt=""
             />
             <div className="services-hero__card">
               <span>
-                <KeyRound size={34} aria-hidden="true" />
+                <img src="/images/services/icon-key.png" alt="" />
               </span>
               <strong>Od prvního rozhovoru až po předání klíčů.</strong>
               <button type="button" aria-label="Pokračovat">
@@ -69,17 +62,17 @@ export default function ServicesPage() {
 
           <div className="services-hero__stats" aria-label="Statistiky služeb">
             <div>
-              <Home size={31} aria-hidden="true" />
+              <img src="/images/services/icon-home.png" alt="" />
               <strong>250+</strong>
               <span>prodaných nemovitostí</span>
             </div>
             <div>
-              <UsersRound size={32} aria-hidden="true" />
+              <img src="/images/services/icon-people.png" alt="" />
               <strong>15+ let</strong>
               <span>zkušeností na trhu</span>
             </div>
             <div>
-              <Star size={32} aria-hidden="true" />
+              <img src="/images/services/icon-star.png" alt="" />
               <strong>98 %</strong>
               <span>spokojených klientů</span>
             </div>
@@ -116,47 +109,40 @@ export default function ServicesPage() {
           <div className="service-detail__features">
             {[
               {
-                icon: BarChart3,
+                icon: '/images/services/icon-chart.png',
                 title: 'Profesionální ocenění',
                 text: 'Stanovíme reálnou tržní cenu na základě aktuálních dat a zkušeností.',
               },
               {
-                icon: Camera,
+                icon: '/images/services/icon-camera.png',
                 title: 'Moderní prezentace',
                 text: 'Profesionální fotografie, video a 3D prohlídky, které zaujmou.',
               },
               {
-                icon: UsersRound,
+                icon: '/images/services/icon-users.png',
                 title: 'Aktivní marketing',
                 text: 'Vaši nemovitost prezentujeme na největších realitních portálech i v naší síti zájemců.',
               },
               {
-                icon: FileText,
+                icon: '/images/services/icon-document.png',
                 title: 'Právní servis',
                 text: 'Smlouvy, advokátní úschova i bezpečný převod jsou pro nás samozřejmostí.',
               },
-            ].map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <article className="service-feature" key={item.title}>
-                  <span>
-                    <Icon size={33} aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              );
-            })}
+            ].map((item) => (
+              <article className="service-feature" key={item.title}>
+                <span>
+                  <img src={item.icon} alt="" />
+                </span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className="service-detail__image" aria-hidden="true">
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=86"
-              alt=""
-            />
+            <img src="/images/services/living-room.png" alt="" />
           </div>
 
           <div className="service-detail__pager" aria-label="Navigace služeb">
@@ -169,9 +155,12 @@ export default function ServicesPage() {
             </button>
           </div>
 
-          <div className="service-detail__note" aria-hidden="true">
-            <span>Společně k vašemu domovu</span>
-          </div>
+          <img
+            className="service-detail__note"
+            src="/images/services/note-detail.png"
+            alt=""
+            aria-hidden="true"
+          />
         </div>
       </section>
     </main>
