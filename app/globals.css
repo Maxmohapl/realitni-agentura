@@ -429,15 +429,6 @@
   clip-path: none;
 }
 
-.services-hero__mark {
-  position: absolute;
-  top: 10px;
-  left: -88px;
-  z-index: 1;
-  width: min(58vw, 840px);
-  opacity: 0.2;
-}
-
 .services-hero__image {
   position: absolute;
   right: 0;
@@ -2020,11 +2011,6 @@
     height: 100%;
   }
 
-  .services-hero__mark {
-    left: 16px;
-    width: 650px;
-  }
-
   .services-hero__card {
     right: 24px;
     bottom: 22px;
@@ -2407,12 +2393,6 @@
     margin-top: 34px;
     border-bottom-left-radius: 150px;
     clip-path: ellipse(75% 64% at 58% 50%);
-  }
-
-  .services-hero__mark {
-    top: 10px;
-    left: -42px;
-    width: 520px;
   }
 
   .services-hero__card {

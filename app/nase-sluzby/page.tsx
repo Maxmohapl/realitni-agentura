@@ -40,13 +40,8 @@ export default function ServicesPage() {
 
           <div className="services-hero__visual" aria-hidden="true">
             <img
-              className="services-hero__mark"
-              src="/images/hero/team-mark.png"
-              alt=""
-            />
-            <img
               className="services-hero__image"
-              src="/images/services/hero-house.png"
+              src="/images/services/hero-combined.png"
               alt=""
             />
             <div className="services-hero__card">
