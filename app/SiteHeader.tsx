@@ -1,11 +1,13 @@
-import { Menu } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 type NavLabel =
   | 'Nabídka'
   | 'Naše služby'
   | 'O nás'
   | 'Náš tým'
-  | 'Reference'
   | 'Financování'
   | 'Projekty'
   | 'Kontakt';
@@ -15,42 +17,31 @@ type SiteHeaderProps = {
   currentPath?: 'home' | 'subpage';
 };
 
-const navItems: Array<{ label: NavLabel; hash: string; pageHref?: string }> = [
-  { label: 'Nabídka', hash: '#nabidka', pageHref: '/nabidka' },
-  { label: 'Naše služby', hash: '#sluzby', pageHref: '/nase-sluzby' },
-  { label: 'O nás', hash: '#o-nas' },
-  { label: 'Náš tým', hash: '#nas-tym' },
-  { label: 'Reference', hash: '#reference' },
-  { label: 'Financování', hash: '#financovani' },
-  { label: 'Projekty', hash: '#projekty' },
-  { label: 'Kontakt', hash: '#kontakt' },
+const navItems: Array<{ label: NavLabel; href: string }> = [
+  { label: 'Nabídka', href: '/nabidka' },
+  { label: 'Naše služby', href: '/nase-sluzby' },
+  { label: 'O nás', href: '/o-nas' },
+  { label: 'Náš tým', href: '/nas-tym' },
+  { label: 'Financování', href: '/financovani' },
+  { label: 'Projekty', href: '/projekty' },
+  { label: 'Kontakt', href: '/kontakt' },
 ];
-
-const getHref = (
-  item: (typeof navItems)[number],
-  currentPath: SiteHeaderProps['currentPath'],
-) => {
-  if (item.pageHref) {
-    return item.pageHref;
-  }
-
-  return currentPath === 'home' ? item.hash : `/${item.hash}`;
-};
 
 export default function SiteHeader({
   activeItem,
-  currentPath = 'home',
 }: SiteHeaderProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="site-header">
       <a className="brand" href="/" aria-label="Realitní Agentura">
         <img src="/images/hero/navbar-logo.png" alt="Realitní Agentura" />
       </a>
 
-      <nav className="site-nav" aria-label="Hlavní navigace">
+      <nav id="site-navigation" className={`site-nav${menuOpen ? " site-nav--open" : ""}`} aria-label="Hlavní navigace">
         {navItems.map((item) => (
           <a
-            href={getHref(item, currentPath)}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
             key={item.label}
             aria-current={activeItem === item.label ? 'page' : undefined}
           >
@@ -61,13 +52,13 @@ export default function SiteHeader({
 
       <a
         className="header-cta"
-        href={currentPath === 'home' ? '#nabidka' : '/nabidka'}
+        href="/nabidka"
       >
         Nemovitosti
       </a>
 
-      <button className="menu-button" type="button" aria-label="Otevřít menu">
-        <Menu size={23} />
+      <button className="menu-button" type="button" aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"} aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={23} /> : <Menu size={23} />}
       </button>
     </header>
   );

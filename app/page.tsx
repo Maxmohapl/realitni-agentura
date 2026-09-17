@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import PropertyListings from './PropertyListings';
 import SiteHeader from './SiteHeader';
+import GoogleReviews from './GoogleReviews';
 
 type Agent = {
   id: string;
@@ -462,6 +463,7 @@ export default function HomePage() {
       </section>
 
       <PropertyListings mode="preview" />
+      <GoogleReviews />
     </main>
   );
 }

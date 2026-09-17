@@ -5,8 +5,6 @@ import type { CSSProperties } from 'react';
 import {
   ArrowDown,
   ArrowRight,
-  Search,
-  SlidersHorizontal,
   X,
 } from 'lucide-react';
 import {
@@ -47,12 +45,6 @@ const sortOptions: Array<{ label: string; value: SortFilter }> = [
   { label: 'Největší plocha', value: 'area-desc' },
 ];
 
-const normalizeText = (value: string) =>
-  value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-
 export default function PropertyListings({
   mode = 'preview',
 }: PropertyListingsProps) {
@@ -63,7 +55,6 @@ export default function PropertyListings({
   const [priceLimit, setPriceLimit] = useState<PriceFilter>('all');
   const [areaLimit, setAreaLimit] = useState<AreaFilter>('all');
   const [sortBy, setSortBy] = useState<SortFilter>('recommended');
-  const [query, setQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(
     isFull ? propertyPageSize + 3 : propertyPageSize,
   );
@@ -90,7 +81,6 @@ export default function PropertyListings({
   }, []);
 
   const filteredProperties = useMemo(() => {
-    const normalizedQuery = normalizeText(query.trim());
     const minArea = areaLimit === 'all' ? 0 : Number(areaLimit);
 
     const filtered = propertyListings.filter((property) => {
@@ -102,11 +92,6 @@ export default function PropertyListings({
         selectedLocation === 'Všechny lokality' ||
         property.city === selectedLocation;
       const matchesArea = property.area >= minArea;
-      const matchesQuery =
-        !normalizedQuery ||
-        normalizeText(
-          `${property.title} ${property.location} ${property.metadata}`,
-        ).includes(normalizedQuery);
       const matchesPrice =
         priceLimit === 'all' ||
         (priceLimit === 'rent-20000' &&
@@ -124,7 +109,6 @@ export default function PropertyListings({
         matchesTransaction &&
         matchesLocation &&
         matchesArea &&
-        matchesQuery &&
         matchesPrice
       );
     });
@@ -148,7 +132,6 @@ export default function PropertyListings({
     activeCategory,
     areaLimit,
     priceLimit,
-    query,
     selectedLocation,
     sortBy,
     transaction,
@@ -172,7 +155,6 @@ export default function PropertyListings({
     setPriceLimit('all');
     setAreaLimit('all');
     setSortBy('recommended');
-    setQuery('');
     setVisibleCount(propertyPageSize + 3);
   };
 
@@ -185,7 +167,6 @@ export default function PropertyListings({
       <div className="properties-shell">
         {isFull && (
           <div className="properties-heading">
-            <p>Aktuální nabídka</p>
             <h1>Všechny nemovitosti</h1>
             <span>
               Projděte si kompletní nabídku a vyfiltrujte si nemovitost podle
@@ -222,19 +203,9 @@ export default function PropertyListings({
           )}
         </div>
 
+        <div className={isFull ? "offers-layout" : "offers-preview-layout"}>
         {isFull && (
-          <div className="advanced-filters">
-            <label className="filter-search">
-              <Search size={18} aria-hidden="true" />
-              <span className="sr-only">Hledat v nabídce</span>
-              <input
-                type="search"
-                placeholder="Hledat lokalitu, dispozici nebo typ"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-              />
-            </label>
-
+          <aside className="advanced-filters" aria-label="Podrobné filtry">
             <label className="filter-field">
               <span>Typ nabídky</span>
               <select
@@ -317,21 +288,16 @@ export default function PropertyListings({
               <X size={17} aria-hidden="true" />
               Vyčistit
             </button>
-          </div>
+          </aside>
         )}
 
+        <div className="offers-results">
         <div className="properties-resultbar">
           <span>
             {isFull
               ? `${filteredProperties.length} nalezených nabídek`
               : `Ukázka ${visibleProperties.length} z ${propertyListings.length} nabídek`}
           </span>
-          {isFull && (
-            <strong>
-              <SlidersHorizontal size={17} aria-hidden="true" />
-              Rozšířené filtry
-            </strong>
-          )}
         </div>
 
         <div className="properties-grid">
@@ -418,6 +384,8 @@ export default function PropertyListings({
               <ArrowRight size={17} aria-hidden="true" />
             </a>
           )}
+        </div>
+        </div>
         </div>
       </div>
 
