@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ArrowRight, CircleDot } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
 
 export const metadata: Metadata = { title: 'O nás | Realitní Agentura' };
@@ -18,7 +18,7 @@ export default function Page() {
     <main className="site-shell about-page">
       <SiteHeader activeItem="O nás" />
       <section className="about-intro about-section">
-        <Visual kind="owner" alt="Bc. Radek Mézl, majitel realitní kanceláře" />
+        <div className="about-owner-portrait"><img src="/images/about/owner-portrait.png" alt="Bc. Radek Mézl, majitel realitní kanceláře" /></div>
         <div className="about-copy">
           <div className="about-eyebrow">O NÁS<span /></div>
           <h1>Pár slov <em>úvodem</em></h1>
@@ -42,10 +42,10 @@ export default function Page() {
           <div className="about-eyebrow">VŽDY JSME TU PRO VÁS<span /></div>
           <h2>„Vždy vám rádi<br /> odpovíme, poradíme<br /> a <em>vše vyřešíme.</em>“</h2>
           <p>Než se však pustíme do práce, nejdříve vás pečlivě vyslechneme, zjistíme vaše potřeby a probereme vaše záměry. Pod pojmem kvalitní bydlení si totiž každý z nás představuje něco jiného. Zajímá nás, proč nemovitost prodáváte nebo pronajímáte nebo co právě hledáte.</p>
-          <ul>{questions.map(question => <li key={question}><CircleDot aria-hidden="true" />{question}</li>)}</ul>
+          <ul>{questions.map(question => <li key={question}><span className="about-list-dot" aria-hidden="true">•</span>{question}</li>)}</ul>
           <a className="about-button" href="/kontakt">KONTAKT<ArrowRight /></a>
         </div>
-        <Visual kind="contact" alt="Ilustrace domu s realitním makléřem. Těšíme se na spolupráci!" />
+        <div className="about-contact-art"><img src="/images/about/house-agent.png" alt="Ilustrace domu s realitním makléřem" loading="lazy" /></div>
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 type NavLabel =
@@ -31,8 +31,18 @@ export default function SiteHeader({
   activeItem,
 }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') { setMenuOpen(false); menuRef.current?.focus(); } };
+    const outside = (event: PointerEvent) => { if (!headerRef.current?.contains(event.target as Node)) setMenuOpen(false); };
+    const resize = () => { if (window.innerWidth > 950) setMenuOpen(false); };
+    document.addEventListener('keydown', escape); document.addEventListener('pointerdown', outside); window.addEventListener('resize', resize);
+    return () => { document.removeEventListener('keydown', escape); document.removeEventListener('pointerdown', outside); window.removeEventListener('resize', resize); };
+  }, [menuOpen]);
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <a className="brand" href="/" aria-label="Realitní Agentura">
         <img src="/images/hero/navbar-logo.png" alt="Realitní Agentura" />
       </a>
@@ -57,7 +67,7 @@ export default function SiteHeader({
         Nemovitosti
       </a>
 
-      <button className="menu-button" type="button" aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"} aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen(!menuOpen)}>
+      <button ref={menuRef} className="menu-button" type="button" aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"} aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X size={23} /> : <Menu size={23} />}
       </button>
     </header>

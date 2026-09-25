@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Home, MapPin, Coins, FileCheck2, ChartColumnIncreasing, Camera, UsersRound, FileText } from 'lucide-react';
 
 const services = [
@@ -54,7 +54,7 @@ const services = [
     accent: 'bez starostí.',
     description: 'Zajistíme kompletní servis pronájmu od stanovení ceny a prezentace až po výběr nájemce, smlouvy a předání bytu či domu.',
     action: 'Chci pronajmout nemovitost',
-    image: '/images/services/rental-viewing.png',
+    image: '/images/services/rental-contracts.png',
     features: [
       { Icon: ChartColumnIncreasing, title: 'Stanovení nájemného', text: 'Pomůžeme určit správnou cenu pronájmu podle lokality, stavu a aktuální situace na trhu.' },
       { Icon: Camera, title: 'Příprava nabídky a prezentace', text: 'Vytvoříme atraktivní inzerci včetně fotografií a prezentace nemovitosti.' },
@@ -65,11 +65,12 @@ const services = [
 ];
 
 export default function ServiceCarousel() {
+  const swipeStart = useRef<{x:number;y:number}|null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const service = services[activeIndex];
   const changeSlide = (direction: number) => setActiveIndex(current => (current + direction + services.length) % services.length);
   return (
-    <section className="service-detail" id="prodej-nemovitosti" aria-label="Naše služby" aria-roledescription="karusel">
+    <section className="service-detail" id="prodej-nemovitosti" aria-label="Naše služby" aria-roledescription="karusel" onPointerDown={event=>{if(event.pointerType==='touch')swipeStart.current={x:event.clientX,y:event.clientY};}} onPointerCancel={()=>{swipeStart.current=null;}} onPointerUp={event=>{const start=swipeStart.current;swipeStart.current=null;if(!start)return;const dx=event.clientX-start.x;const dy=event.clientY-start.y;if(Math.abs(dx)>65 && Math.abs(dx)>Math.abs(dy)*1.5)changeSlide(dx<0?1:-1);}}>
       <div className={`service-detail__shell${activeIndex > 0 ? ' service-detail__shell--purchase' : ''}`}>
         <div className="service-detail__intro service-detail__enter" key={`intro-${activeIndex}`}>
           <p className="service-detail__kicker"><span>{String(activeIndex + 1).padStart(2, '0')}</span><i aria-hidden="true" />{service.label}</p>
@@ -85,7 +86,7 @@ export default function ServiceCarousel() {
             </article>
           ))}
         </div>
-        <div className={`service-detail__image service-detail__enter${activeIndex === 2 ? ' service-detail__image--masked service-detail__image--rental' : activeIndex === 1 ? ' service-detail__image--masked' : ''}`} key={`image-${activeIndex}`} aria-hidden="true">
+        <div className={`service-detail__image service-detail__enter${activeIndex === 2 ? ' service-detail__image--rental' : activeIndex === 1 ? ' service-detail__image--masked' : ''}`} key={`image-${activeIndex}`} aria-hidden="true">
           <img src={service.image} alt="" />
         </div>
         <div className="service-detail__pager" aria-label="Navigace služeb">

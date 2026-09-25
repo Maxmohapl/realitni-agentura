@@ -4,12 +4,16 @@ import { ArrowLeft, ArrowRight, FileText, Mail, Phone } from 'lucide-react';
 import SiteHeader from '../../SiteHeader';
 import projects from '../project-details.json';
 import ProjectInquiry from '../ProjectInquiry';
+import ImportedProjectDetail from '../ImportedProjectDetail';
+import { projects as projectSummaries } from '../projects';
 export async function generateMetadata({ params }: { params: Promise<{slug:string}> }): Promise<Metadata> {
- const {slug}=await params; const project=projects.find(p=>p.slug===slug);
- return {title: project ? `${project.title} | Realitní Agentura` : 'Projekt nenalezen'};
+ const {slug}=await params; const project=projects.find(p=>p.slug===slug); const summary=projectSummaries.find(p=>p.slug===slug);
+ return {title: project ? `${project.title} | Realitní Agentura` : summary ? `${summary.name} | Realitní Agentura` : 'Projekt nenalezen', description: summary?.description};
 }
 export default async function ProjectDetail({params}:{params:Promise<{slug:string}>}) {
  const {slug}=await params;
+ const summary=projectSummaries.find(p=>p.slug===slug);
+ if(summary?.compact) return <ImportedProjectDetail project={summary} />;
  const project=projects.find(p=>p.slug===slug);
  if(!project) notFound();
  const sections: {title:string;blocks:typeof project.blocks}[]=[];

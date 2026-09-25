@@ -101,7 +101,7 @@ export default function ServicesPage() {
             <img className="property-presentation__photo" src="/images/presentation/photographer.png" alt="Fotograf při profesionálním focení nemovitosti" />
             <div className="property-presentation__result">
               <img src="/images/presentation/living.png" alt="" />
-              <div><p>3+kk, 78 m²<br />Pardubice</p><strong><TrendingUp size={22} aria-hidden="true" /> +12 %</strong><span>vyšší prodejní cena</span></div>
+              <div><p>3+kk, 78 m²<br />Olomouc</p><strong><TrendingUp size={22} aria-hidden="true" /> +12 %</strong><span>vyšší prodejní cena</span></div>
               <ChartColumnIncreasing className="property-presentation__chart" size={36} aria-hidden="true" />
             </div>
             <div className="property-presentation__gallery" aria-label="Ukázky fotografií nemovitosti">
@@ -112,9 +112,9 @@ export default function ServicesPage() {
                 ['bathroom', 'Koupelna'],
                 ['balcony', 'Balkon s výhledem'],
               ].map(([name, alt]) => (
-                <a key={name} href={`/images/presentation/${name}.png`} target="_blank" rel="noreferrer" aria-label={`Zvětšit: ${alt}`}>
+                <div className="property-presentation__thumbnail" key={name}>
                   <img src={`/images/presentation/${name}.png`} alt={alt} loading="lazy" />
-                </a>
+                </div>
               ))}
             </div>
           </div>

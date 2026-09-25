@@ -1,19 +1,21 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { CSSProperties } from 'react';
 import {
   ArrowDown,
+  SlidersHorizontal,
   ArrowRight,
   X,
 } from 'lucide-react';
 import {
   propertyCategories,
   propertyCategoryIcons,
-  propertyListings,
   propertyPageSize,
 } from './property-data';
 import type { PropertyFilter, PropertyTransaction } from './property-data';
+import { legacyProperties } from '@/lib/properties/legacy';
+import { primaryArea, primaryImage, propertyTypeLabels, transactionLabels, type Property } from '@/lib/properties/model';
 
 type PropertyListingsProps = {
   mode?: 'preview' | 'full';
@@ -48,6 +50,8 @@ const sortOptions: Array<{ label: string; value: SortFilter }> = [
 export default function PropertyListings({
   mode = 'preview',
 }: PropertyListingsProps) {
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [properties, setProperties] = useState<Property[]>(legacyProperties);
   const isFull = mode === 'full';
   const [activeCategory, setActiveCategory] = useState<PropertyFilter>('Vše');
   const [transaction, setTransaction] = useState<TransactionFilter>('Vše');
@@ -59,50 +63,60 @@ export default function PropertyListings({
     isFull ? propertyPageSize + 3 : propertyPageSize,
   );
 
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch('/api/properties', { signal: controller.signal })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Properties unavailable')))
+      .then((data) => data as { properties?: Property[] })
+      .then((data) => { if (data.properties?.length) setProperties(data.properties); })
+      .catch((error) => { if (error instanceof Error && error.name !== 'AbortError') console.error('Property list refresh failed'); });
+    return () => controller.abort();
+  }, []);
+
   const propertyCategoryCounts = useMemo(() => {
     return propertyCategories.reduce(
       (counts, category) => ({
         ...counts,
-        [category]: propertyListings.filter(
-          (property) => property.category === category,
+        [category]: properties.filter(
+          (property) => propertyTypeLabels[property.propertyType] === category,
         ).length,
       }),
       {} as Record<(typeof propertyCategories)[number], number>,
     );
-  }, []);
+  }, [properties]);
 
   const locations = useMemo(() => {
     return [
       'Všechny lokality',
       ...Array.from(
-        new Set(propertyListings.map((property) => property.city)),
+        new Set(properties.map((property) => property.location.city).filter((city): city is string => Boolean(city))),
       ).sort((a, b) => a.localeCompare(b, 'cs')),
     ];
-  }, []);
+  }, [properties]);
 
   const filteredProperties = useMemo(() => {
     const minArea = areaLimit === 'all' ? 0 : Number(areaLimit);
 
-    const filtered = propertyListings.filter((property) => {
+    const filtered = properties.filter((property) => {
       const matchesCategory =
-        activeCategory === 'Vše' || property.category === activeCategory;
+        activeCategory === 'Vše' || propertyTypeLabels[property.propertyType] === activeCategory;
       const matchesTransaction =
-        transaction === 'Vše' || property.transaction === transaction;
+        transaction === 'Vše' || transactionLabels[property.transactionType] === transaction;
       const matchesLocation =
         selectedLocation === 'Všechny lokality' ||
-        property.city === selectedLocation;
-      const matchesArea = property.area >= minArea;
+        property.location.city === selectedLocation;
+      const matchesArea = primaryArea(property) >= minArea;
       const matchesPrice =
         priceLimit === 'all' ||
         (priceLimit === 'rent-20000' &&
-          property.transaction === 'Pronájem' &&
-          property.priceValue <= 20000) ||
+          property.transactionType === 'RENT' &&
+          (property.price ?? Infinity) <= 20000) ||
         (priceLimit === 'sale-5000000' &&
-          property.transaction === 'Prodej' &&
-          property.priceValue <= 5000000) ||
+          property.transactionType === 'SALE' &&
+          (property.price ?? Infinity) <= 5000000) ||
         (priceLimit === 'sale-7000000' &&
-          property.transaction === 'Prodej' &&
-          property.priceValue <= 7000000);
+          property.transactionType === 'SALE' &&
+          (property.price ?? Infinity) <= 7000000);
 
       return (
         matchesCategory &&
@@ -115,18 +129,18 @@ export default function PropertyListings({
 
     return filtered.toSorted((first, second) => {
       if (sortBy === 'price-asc') {
-        return first.priceValue - second.priceValue;
+        return (first.price ?? Infinity) - (second.price ?? Infinity);
       }
 
       if (sortBy === 'price-desc') {
-        return second.priceValue - first.priceValue;
+        return (second.price ?? -Infinity) - (first.price ?? -Infinity);
       }
 
       if (sortBy === 'area-desc') {
-        return second.area - first.area;
+        return primaryArea(second) - primaryArea(first);
       }
 
-      return first.id - second.id;
+      return (Date.parse(second.publishedAt ?? '') || 0) - (Date.parse(first.publishedAt ?? '') || 0);
     });
   }, [
     activeCategory,
@@ -135,6 +149,7 @@ export default function PropertyListings({
     selectedLocation,
     sortBy,
     transaction,
+    properties,
   ]);
 
   const previewProperties = filteredProperties.slice(0, propertyPageSize);
@@ -181,7 +196,7 @@ export default function PropertyListings({
               const isActive = activeCategory === filter;
               const count =
                 filter === 'Vše'
-                  ? propertyListings.length
+                  ? properties.length
                   : propertyCategoryCounts[filter];
 
               return (
@@ -205,7 +220,7 @@ export default function PropertyListings({
 
         <div className={isFull ? "offers-layout" : "offers-preview-layout"}>
         {isFull && (
-          <aside className="advanced-filters" aria-label="Podrobné filtry">
+          <div className="offers-filter-panel"><button className="mobile-filter-toggle" type="button" aria-expanded={filtersOpen} aria-controls="offers-detailed-filters" onClick={()=>setFiltersOpen(!filtersOpen)}><SlidersHorizontal size={19}/><span>{filtersOpen ? 'Skrýt filtry' : 'Upřesnit hledání'}</span><span>{filteredProperties.length} nabídek</span></button><aside id="offers-detailed-filters" className={`advanced-filters${filtersOpen ? ' advanced-filters--open' : ''}`} aria-label="Podrobné filtry">
             <label className="filter-field">
               <span>Typ nabídky</span>
               <select
@@ -288,17 +303,11 @@ export default function PropertyListings({
               <X size={17} aria-hidden="true" />
               Vyčistit
             </button>
-          </aside>
+          </aside></div>
         )}
 
         <div className="offers-results">
-        <div className="properties-resultbar">
-          <span>
-            {isFull
-              ? `${filteredProperties.length} nalezených nabídek`
-              : `Ukázka ${visibleProperties.length} z ${propertyListings.length} nabídek`}
-          </span>
-        </div>
+        {isFull && <div className="properties-resultbar"><span>{filteredProperties.length} nalezených nabídek</span></div>}
 
         <div className="properties-grid">
           {visibleProperties.map((property, index) => (
@@ -311,37 +320,33 @@ export default function PropertyListings({
                 } as CSSProperties
               }
             >
+              <a className="property-card__link" href={`/nemovitosti/${property.slug}`} aria-label={`Zobrazit nemovitost: ${property.title}`}>
               <div className="property-card__media">
-                <img src={property.image} alt={property.title} />
+                <img src={primaryImage(property)?.url || '/images/services/hero-house.png'} alt={primaryImage(property)?.alt || property.title} />
                 <span className="property-card__badge">
-                  {property.transaction}
+                  {property.status === 'RESERVED' ? 'Rezervováno' : transactionLabels[property.transactionType]}
                 </span>
-                <button
-                  className="property-card__favorite"
-                  type="button"
-                  aria-label={`Přidat do oblíbených: ${property.title}`}
-                >
-                  <img src="/assets/realitni/icon_favorite_heart.png" alt="" />
-                </button>
               </div>
 
               <div className="property-card__body">
                 <h3>{property.title}</h3>
                 <p className="property-card__location">
                   <img src="/assets/realitni/icon_location_pin.png" alt="" />
-                  <span>{property.location}</span>
+                  <span>{[property.location.cityPart, property.location.city].filter(Boolean).join(', ') || 'Lokalita na vyžádání'}</span>
                 </p>
-                <p className="property-card__meta">{property.metadata}</p>
-                <p className="property-card__price">{property.price}</p>
+                <p className="property-card__meta">{[propertyTypeLabels[property.propertyType].replace(/y$|í$/, ''), primaryArea(property) ? `${primaryArea(property)} m²` : null, property.disposition].filter(Boolean).join(' | ')}</p>
+                <p className="property-card__price">{property.price != null ? `${property.priceNote === 'od' ? 'od ' : ''}${new Intl.NumberFormat('cs-CZ').format(property.price)} ${property.currency}${property.priceNote && property.priceNote !== 'od' ? ` / ${property.priceNote.replace(/^za /, '')}` : ''}` : 'Cena na vyžádání'}</p>
               </div>
+              </a>
             </article>
           ))}
         </div>
 
         {visibleProperties.length === 0 && (
           <div className="properties-empty">
-            <h2>Nic jsme nenašli</h2>
-            <p>Zkuste ubrat některý filtr nebo vyčistit zadání.</p>
+            <h2>{properties.length === 0 ? 'Aktuálně připravujeme nové nabídky' : 'Nic jsme nenašli'}</h2>
+            <p>{properties.length === 0 ? 'Brzy zde zveřejníme aktuální nemovitosti.' : 'Zkuste ubrat některý filtr nebo vyčistit zadání.'}</p>
+            {properties.length > 0 && (
             <button
               className="filters-reset"
               type="button"
@@ -350,14 +355,12 @@ export default function PropertyListings({
               <X size={17} aria-hidden="true" />
               Vyčistit filtry
             </button>
+            )}
           </div>
         )}
 
         <div className="properties-actions">
-          <p>
-            Zobrazeno {visibleProperties.length} z {filteredProperties.length}{' '}
-            nabídek
-          </p>
+          {isFull && <p>Zobrazeno {visibleProperties.length} z {filteredProperties.length} nabídek</p>}
           {canLoadMore && (
             <button
               className="properties-load"

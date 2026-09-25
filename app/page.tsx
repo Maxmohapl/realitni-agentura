@@ -297,7 +297,7 @@ export default function HomePage() {
                       '--agent-z': agent.position.zIndex,
                     } as React.CSSProperties
                   }
-                  onPointerEnter={() => setActiveAgent(agent.id)}
+                  onPointerEnter={(event) => { if (event.pointerType === "mouse") setActiveAgent(agent.id); }}
                   onPointerLeave={() => setActiveAgent(null)}
                   onPointerDown={(event) => {
                     lastPointerType.current = event.pointerType;
@@ -316,14 +316,14 @@ export default function HomePage() {
                 >
                   <a
                     className="agent__link"
-                    href={agent.url}
+                    href={`/nas-tym#${agent.id}`}
                     aria-describedby={`${agent.id}-card`}
                     onClick={(event) => {
                       const isTouch =
                         lastPointerType.current === 'touch' ||
                         lastPointerType.current === 'pen';
 
-                      if (isTouch && activeAgent !== agent.id) {
+                      if (isTouch && window.innerWidth > 767 && activeAgent !== agent.id) {
                         event.preventDefault();
                         setActiveAgent(agent.id);
                         event.currentTarget.scrollIntoView({
@@ -362,7 +362,7 @@ export default function HomePage() {
                       <Mail size={15} aria-hidden="true" />
                       {agent.email}
                     </a>
-                    <a className="agent__cta" href={agent.url}>
+                    <a className="agent__cta" href={`/nas-tym#${agent.id}`}>
                       Detail makléře
                       <ArrowRight size={15} aria-hidden="true" />
                     </a>
@@ -433,7 +433,7 @@ export default function HomePage() {
                       </span>
                     </div>
 
-                    <div className="service-card__hover" aria-hidden="true">
+                    <div className="service-card__hover">
                       <div className="service-card__hover-title">
                         <img
                           className="service-card__hover-icon"

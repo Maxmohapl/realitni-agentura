@@ -10,7 +10,7 @@ export async function GET() {
       signal: AbortSignal.timeout(8000), cache: 'no-store',
     });
     if (!response.ok) return Response.json({ status: 'unavailable', profileUrl }, { headers });
-    const data = await response.json();
+    const data = await response.json() as { rating?: number; userRatingCount?: number; googleMapsUri?: string; reviews?: Array<{ rating: number; text?: {text:string}; authorAttribution?: {displayName:string;uri?:string}; relativePublishTimeDescription?:string; googleMapsUri?:string }> };
     return Response.json({ status: 'ready', rating: data.rating, count: data.userRatingCount, profileUrl: data.googleMapsUri || profileUrl, reviews: (data.reviews || []).slice(0,3).map((review: { rating: number; text?: {text:string}; authorAttribution?: {displayName:string;uri?:string}; relativePublishTimeDescription?:string; googleMapsUri?:string }) => ({ rating: review.rating, text: review.text?.text || '', author: review.authorAttribution?.displayName || 'Uživatel Google', authorUrl: review.authorAttribution?.uri, time: review.relativePublishTimeDescription, url: review.googleMapsUri })) }, { headers });
   } catch { return Response.json({ status: 'unavailable', profileUrl }, { headers }); }
 }
