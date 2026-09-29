@@ -63,3 +63,9 @@ The fixture at `fixtures/urbium-mock.xml` is deliberately marked as a temporary 
 10. GDPR, retention and redistribution requirements.
 
 When these arrive, replace the temporary types and extraction in `lib/urbium/types.ts`, `parser.ts` and `mapper.ts`; keep the normalized property model and presentation layer unchanged.
+
+## Production database
+
+Cloudflare D1 `realitni-agentura-db` (EU jurisdiction) is bound as `DB` by `vite.config.ts`. Its public resource ID is `a9a0baf8-88c9-4af1-b6db-645d0f2c97eb`. The initial schema from `drizzle/0000_illegal_ma_gnuci.sql` was applied through the D1 console on 2026-09-29. Do not reapply this initial migration to production. Local development uses the local D1 emulator; no remote binding is enabled.
+
+Workers Builds builds with `npm run build` and deploys with `npx wrangler deploy --config dist/server/wrangler.json`. Do not restore the placeholder database ID in production.

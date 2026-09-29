@@ -4,8 +4,8 @@ import vinext from 'vinext';
 import { defineConfig } from 'vite';
 import hostingConfig from './.openai/hosting.json';
 
-const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
-  '00000000-0000-4000-8000-000000000000';
+// Public D1 resource identifier; credentials remain in Cloudflare.
+const REALITNI_DATABASE_ID = 'a9a0baf8-88c9-4af1-b6db-645d0f2c97eb';
 
 const { d1, r2 } = hostingConfig;
 
@@ -13,14 +13,15 @@ const { d1, r2 } = hostingConfig;
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
+  name: 'realitni-agentura',
   main: 'vinext/server/fetch-handler',
   compatibility_flags: ['nodejs_compat'],
   d1_databases: d1
     ? [
         {
           binding: d1,
-          database_name: 'site-creator-d1',
-          database_id: SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
+          database_name: 'realitni-agentura-db',
+          database_id: REALITNI_DATABASE_ID,
         },
       ]
     : [],
