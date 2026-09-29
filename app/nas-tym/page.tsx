@@ -27,7 +27,7 @@ export default function TeamPage() {
     <a className="team-card__contact" href={`tel:${agent.phone.replaceAll(' ','')}`}><Phone />{agent.phone}</a>
     <a className="team-card__contact" href={`mailto:${agent.email}`}><Mail />{agent.email}</a>
     <p className="team-card__description">{agent.description}</p>
-    <a className="team-red-button" href="/nabidka">NEMOVITOSTI MAKLÉŘE</a></div>
+    <a className="team-red-button" href="/nabidka">ZOBRAZIT NABÍDKU</a></div>
    </article>)}</div>
    <aside className="team-legal"><div className="team-legal__portrait"><CircleUserRound aria-hidden="true" /></div><div className="team-legal__person"><span>PRÁVNÍ PODPORA</span><h3>Mgr. Dalibor Lachman</h3><p>advokát</p><a href="tel:+420777723407"><Phone />+420 777 723 407</a><a href="mailto:daliborlachman@seznam.cz"><Mail />daliborlachman@seznam.cz</a></div><p className="team-legal__description">Zajišťuje právní servis naší kanceláře, včetně přípravy smluv, právního poradenství a bezpečného převodu nemovitostí. Díky jeho odbornosti mají naši klienti jistotu, že je celý proces v souladu s platnou legislativou.</p></aside>
   </section>

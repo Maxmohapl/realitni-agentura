@@ -177,7 +177,7 @@ const services = [
     description: 'Prodejte za správnou cenu a bez starostí.',
     icon: '/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.png',
     accent: 'red',
-    href: '#prodej',
+    href: '/nase-sluzby?sluzba=prodej#prodej-nemovitosti',
     points: [
       'Ocenění a analýza trhu',
       'Příprava nemovitosti k prodeji',
@@ -193,7 +193,7 @@ const services = [
     description: 'Najděte nemovitost bez zbytečného rizika.',
     icon: '/images/service-icons/blue_house_and_red_key_icon-cropped.png',
     accent: 'blue',
-    href: '#koupe',
+    href: '/nase-sluzby?sluzba=koupe#prodej-nemovitosti',
     points: [
       'Vyhledání nemovitosti',
       'Analýza lokality a dostupnosti',
@@ -209,7 +209,7 @@ const services = [
     description: 'Pronajměte bezpečně a správnému člověku.',
     icon: '/images/service-icons/blue_building_and_red_user_icon-cropped.png',
     accent: 'mixed',
-    href: '#pronajem',
+    href: '/nase-sluzby?sluzba=pronajem#prodej-nemovitosti',
     points: [
       'Stanovení nájemného',
       'Příprava nabídky a prezentace',

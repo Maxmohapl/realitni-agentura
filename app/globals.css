@@ -3042,3 +3042,12 @@
  .compact-project__cta { display:grid; margin:35px 20px 55px; padding:27px 22px; }
  .compact-project__cta .projects-button { width:100%; justify-content:space-between; }
 }
+
+.contact-page { background:linear-gradient(145deg,#f1f8ff,#fff 70%); }
+.contact-page__shell { max-width:850px; margin:auto; padding:140px 24px 70px; }
+.contact-page h1 { color:#07142f; font-size:clamp(38px,5vw,64px); line-height:1.1; margin:0 0 30px; }
+.contact-page h1 span { color:#fa001c; }
+.contact-page .team-inquiry-section { display:block; padding:0; background:none; }
+.contact-page .team-inquiry-section>div { margin-bottom:28px; }
+.contact-page .team-inquiry-form { padding:clamp(20px,4vw,36px); border:1px solid #e0eafa; border-radius:24px; background:#fff; box-shadow:0 15px 45px #12355508; }
+@media(max-width:767px){.contact-page__shell { padding:110px 20px 45px; }.contact-page .team-inquiry-form__row { grid-template-columns:1fr; }.contact-page .about-button{width:100%;justify-content:center;}}

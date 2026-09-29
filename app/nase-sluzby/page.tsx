@@ -26,7 +26,7 @@ export default function ServicesPage() {
               Postaráme se o celý proces od prvního rozhovoru až po předání
               klíčů. Profesionálně, bezpečně a s důrazem na vaše potřeby.
             </p>
-            <a className="services-hero__button" href="#prodej-nemovitosti">
+            <a className="services-hero__button" href="/kontakt?sluzba=Nez%C3%A1vazn%C3%A1%20konzultace">
               Nezávazná konzultace
               <ArrowRight size={22} aria-hidden="true" />
             </a>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
                 </article>
               ))}
             </div>
-            <a className="service-detail__button" href="/kontakt">Chci profesionální prezentaci<ArrowRight size={22} aria-hidden="true" /></a>
+            <a className="service-detail__button" href="/kontakt?sluzba=Prezentace%20nemovitosti">Chci profesionální prezentaci<ArrowRight size={22} aria-hidden="true" /></a>
           </div>
           <div className="property-presentation__visual">
             <svg width="0" height="0" aria-hidden="true"><defs><clipPath id="presentation-photo-shape" clipPathUnits="objectBoundingBox"><path d="M .47,0 C .25,0 .11,.23 .02,.53 C -.03,.69 .015,.75 .08,.75 L .29,.75 C .41,.75 .41,1 .56,1 L 1,1 L 1,.02 Z" /></clipPath></defs></svg>

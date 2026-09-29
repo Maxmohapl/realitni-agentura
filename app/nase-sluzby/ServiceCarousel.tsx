@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Home, MapPin, Coins, FileCheck2, ChartColumnIncreasing, Camera, UsersRound, FileText } from 'lucide-react';
 
 const services = [
@@ -67,6 +67,10 @@ const services = [
 export default function ServiceCarousel() {
   const swipeStart = useRef<{x:number;y:number}|null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(()=>{
+    const sync=()=>{const key=new URLSearchParams(window.location.search).get('sluzba');setActiveIndex(key==='koupe'?1:key==='pronajem'?2:0);};
+    sync();window.addEventListener('popstate',sync);return()=>window.removeEventListener('popstate',sync);
+  },[]);
   const service = services[activeIndex];
   const changeSlide = (direction: number) => setActiveIndex(current => (current + direction + services.length) % services.length);
   return (
@@ -76,7 +80,7 @@ export default function ServiceCarousel() {
           <p className="service-detail__kicker"><span>{String(activeIndex + 1).padStart(2, '0')}</span><i aria-hidden="true" />{service.label}</p>
           <h2>{service.title} <span>{activeIndex === 2 && <b className="service-detail__conjunction">a </b>}{service.accent}</span></h2>
           <p>{service.description}</p>
-          <a className="service-detail__button" href="/kontakt">{service.action}<ArrowRight size={22} aria-hidden="true" /></a>
+          <a className="service-detail__button" href={`/kontakt?sluzba=${encodeURIComponent(service.label)}`}>{service.action}<ArrowRight size={22} aria-hidden="true" /></a>
         </div>
         <div className="service-detail__features service-detail__enter" key={`features-${activeIndex}`}>
           {service.features.map(item => (
