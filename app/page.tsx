@@ -248,7 +248,7 @@ export default function HomePage() {
   );
 
   return (
-    <main className="site-shell">
+    <main className="site-shell home-page">
       <SiteHeader currentPath="home" />
 
       <section className="hero" aria-labelledby="hero-title">
@@ -372,6 +372,8 @@ export default function HomePage() {
             })}
           </div>
         </div>
+
+        <a className="home-team-button button button--primary" href="/nas-tym">Náš tým <ArrowRight size={18} aria-hidden="true" /></a>
 
         <aside className="hero-stats" aria-label="Statistiky realitní agentury">
           {stats.map((stat) => {
