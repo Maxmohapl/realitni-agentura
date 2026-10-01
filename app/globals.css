@@ -3051,3 +3051,14 @@
 .contact-page .team-inquiry-section>div { margin-bottom:28px; }
 .contact-page .team-inquiry-form { padding:clamp(20px,4vw,36px); border:1px solid #e0eafa; border-radius:24px; background:#fff; box-shadow:0 15px 45px #12355508; }
 @media(max-width:767px){.contact-page__shell { padding:110px 20px 45px; }.contact-page .team-inquiry-form__row { grid-template-columns:1fr; }.contact-page .about-button{width:100%;justify-content:center;}}
+.inquiry-switch { display:flex; gap:8px; padding:6px; margin-bottom:20px; border:1px solid #dce7f4; border-radius:16px; background:#f0f6fc; }
+.inquiry-switch button { flex:1; min-height:50px; padding:10px; border:0; border-radius:11px; background:transparent; color:#526784; font:inherit; font-weight:650; cursor:pointer; }
+.inquiry-switch button[aria-pressed="true"] { background:#fff; color:#0066ca; box-shadow:0 3px 12px #102c4e12; }
+.valuation-upload { border:1px dashed #9cbce2; border-radius:14px; padding:18px; }
+.valuation-upload input { width:100%; min-width:0; font-size:14px; }
+.valuation-upload small { color:#526784; font-weight:400; line-height:1.5; }
+.valuation-files { list-style:none; padding:0; margin:0; }
+.valuation-files li { display:flex; align-items:center; gap:10px; border-bottom:1px solid #e3ecf5; padding:8px 0; }
+.valuation-files span { min-width:0; overflow-wrap:anywhere; flex:1; font-size:14px; }
+.valuation-files button { display:grid; place-items:center; flex-shrink:0; width:44px; height:44px; border:0; border-radius:10px; background:#f1f6fc; cursor:pointer; }
+.team-inquiry-form [role="alert"] { color:#b91c1c; }
