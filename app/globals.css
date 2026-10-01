@@ -3062,3 +3062,16 @@
 .valuation-files span { min-width:0; overflow-wrap:anywhere; flex:1; font-size:14px; }
 .valuation-files button { display:grid; place-items:center; flex-shrink:0; width:44px; height:44px; border:0; border-radius:10px; background:#f1f6fc; cursor:pointer; }
 .team-inquiry-form [role="alert"] { color:#b91c1c; }
+.questionnaire-top {display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 24px;color:#687d98;font-size:13px;}
+.questionnaire-back {display:flex;align-items:center;gap:8px;min-height:44px;background:none;border:0;color:#176aca;cursor:pointer;font:inherit;}
+.questionnaire-title {font-size:26px;line-height:1.25;color:#102c4e;margin:0 0 22px;outline:none;}
+.questionnaire-choices {display:grid;gap:12px;}
+.questionnaire-choices button {display:flex;align-items:center;gap:18px;width:100%;padding:22px;border:1px solid #dce7f4;border-radius:18px;background:white;color:#126cce;text-align:left;cursor:pointer;transition:background .2s,border-color .2s;}
+.questionnaire-choices button:hover {background:#f0f7ff;border-color:#3284e4;}
+.questionnaire-choices button:focus-visible,.questionnaire-back:focus-visible {outline:3px solid #3284e4;outline-offset:3px;}
+.questionnaire-choices span {flex:1;min-width:0;}
+.questionnaire-choices strong {display:block;font-size:17px;color:#102c4e;line-height:1.35;}
+.questionnaire-choices small {display:block;font-size:14px;color:#687d98;line-height:1.5;margin-top:5px;}
+.questionnaire-choices svg {flex-shrink:0;}
+.questionnaire select {width:100%;min-height:50px;padding:12px;border:1px solid #dce3ed;border-radius:8px;background:#fff;color:#102c4e;font:inherit;}
+@media(max-width:767px){.questionnaire-choices button{padding:18px 14px;gap:12px;}.questionnaire-title{font-size:23px;}.questionnaire-choices strong{font-size:16px;}}
