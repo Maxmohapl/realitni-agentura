@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import ValuationForm from './ValuationForm';
 import { ArrowRight, ArrowLeft, Calculator, Home, KeyRound, Search, MessageCircle } from 'lucide-react';
 const choices = [
- {id:'valuation',label:'Nezávazná kalkulace ceny',text:'Zjistěte zdarma orientační cenu své nemovitosti.',Icon:Calculator},
+ {id:'valuation',label:'Odhad ceny nemovitosti',text:'Zjistěte zdarma orientační cenu své nemovitosti.',Icon:Calculator},
  {id:'sale',label:'Prodej nemovitosti',text:'Chci prodat byt, dům nebo pozemek.',Icon:Home},
  {id:'rent',label:'Pronájem nemovitosti',text:'Mám nemovitost a hledám nájemce.',Icon:KeyRound},
  {id:'search',label:'Poptávka koupě / pronájmu nemovitosti',text:'Hledám nové bydlení nebo investici.',Icon:Search},

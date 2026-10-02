@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ArrowRight, KeyRound, Home, UsersRound, Star, Camera, ImageIcon, SquarePlay, TrendingUp, ChartColumnIncreasing, MapPin, FileText, ShieldCheck, PencilLine, Coins } from 'lucide-react';
+import { ArrowRight, KeyRound, Home, UsersRound, Star, Camera, ImageIcon, SquarePlay, Drone, ChartColumnIncreasing, MapPin, FileText, ShieldCheck, PencilLine, Coins } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
 import ServiceCarousel from './ServiceCarousel';
 
@@ -77,48 +77,46 @@ export default function ServicesPage() {
       </section>
 
       <ServiceCarousel />
-      <section className="property-presentation" aria-labelledby="presentation-title">
-        <div className="property-presentation__shell">
-          <div className="property-presentation__copy">
-            <h2 id="presentation-title">Profesionální prezentace,<br />která <span>zvyšuje hodnotu.</span></h2>
-            <p className="property-presentation__lead">Kvalitní fotografie, poutavý inzerát a promyšlená prezentace dokážou výrazně ovlivnit zájem kupujících a výslednou prodejní cenu. Vaši nemovitost představíme v tom nejlepším světle – moderně, profesionálně a na všech relevantních platformách.</p>
-            <div className="property-presentation__features">
+      <section className="presentation-showcase" aria-labelledby="presentation-title">
+        <div className="presentation-showcase__shell">
+          <div className="presentation-showcase__copy">
+            <h2 id="presentation-title">Prezentace, která<br /><span>zvyšuje hodnotu.</span></h2>
+            <p className="presentation-showcase__lead">Kvalitní fotografie a působivá prezentace dokážou ukázat vaši nemovitost v tom nejlepším světle a přilákat více zájemců.</p>
+            <div className="presentation-showcase__features">
               {[
                 { Icon: Camera, title: 'Profesionální focení', text: 'Využíváme špičkovou techniku, širokoúhlé záběry a úpravy, které zvýrazní přednosti vaší nemovitosti.' },
                 { Icon: ImageIcon, title: 'Atraktivní inzerce', text: 'Připravíme poutavý inzerát s promyšleným textem, půdorysy, videem a správným cílením.' },
-                { Icon: SquarePlay, title: 'Větší zájem, vyšší cena', text: 'Profesionální prezentace přitahuje více zájemců a může zvýšit prodejní cenu až o 5–15 %.' },
-              ].map(({ Icon, title, text }) => (
-                <article className="service-feature" key={title}>
-                  <span><Icon size={36} strokeWidth={1.8} aria-hidden="true" /></span>
-                  <div><h3>{title}</h3><p>{text}</p></div>
-                </article>
-              ))}
+              ].map(({ Icon, title, text }) => <article className="presentation-showcase__feature" key={title}><span><Icon size={32} strokeWidth={1.8} aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}
             </div>
-            <a className="service-detail__button" href="/kontakt?sluzba=Prezentace%20nemovitosti">Chci profesionální prezentaci<ArrowRight size={22} aria-hidden="true" /></a>
+            <div className="presentation-showcase__video">
+              <p className="presentation-showcase__eyebrow">DRON A VIDEO</p>
+              <h3>Z nové perspektivy.</h3>
+              <p className="presentation-showcase__lead">Záběry z výšky i prohlídka interiéru přiblíží nemovitost, její okolí a atmosféru.</p>
+              <div className="presentation-showcase__features">
+                {[
+                  { Icon: Drone, title: 'Záběry z dronu', text: 'Ukážeme nemovitost z výšky a její okolí. Letecké záběry odhalí polohu, výhledy i dispozici pozemku.' },
+                  { Icon: SquarePlay, title: 'Videoprohlídka nemovitosti', text: 'Propojíme záběry z dronu s prohlídkou interiéru do profesionálního promo videa, které zaujme na první pohled.' },
+                ].map(({ Icon, title, text }) => <article className="presentation-showcase__feature" key={title}><span><Icon size={32} strokeWidth={1.8} aria-hidden="true" /></span><div><h4>{title}</h4><p>{text}</p></div></article>)}
+              </div>
+            </div>
+            <a className="presentation-showcase__button" href="/kontakt?sluzba=Prezentace%20nemovitosti">Chci profesionální prezentaci</a>
           </div>
-          <div className="property-presentation__visual">
-            <svg width="0" height="0" aria-hidden="true"><defs><clipPath id="presentation-photo-shape" clipPathUnits="objectBoundingBox"><path d="M .47,0 C .25,0 .11,.23 .02,.53 C -.03,.69 .015,.75 .08,.75 L .29,.75 C .41,.75 .41,1 .56,1 L 1,1 L 1,.02 Z" /></clipPath></defs></svg>
-            <img className="property-presentation__photo" src="/images/presentation/photographer.png" alt="Fotograf při profesionálním focení nemovitosti" />
-            <div className="property-presentation__result">
-              <img src="/images/presentation/living.png" alt="" />
-              <div><p>3+kk, 78 m²<br />Olomouc</p><strong><TrendingUp size={22} aria-hidden="true" /> +12 %</strong><span>vyšší prodejní cena</span></div>
-              <ChartColumnIncreasing className="property-presentation__chart" size={36} aria-hidden="true" />
-            </div>
-            <div className="property-presentation__gallery" aria-label="Ukázky fotografií nemovitosti">
+          <div className="presentation-showcase__visual" aria-label="Fotografie a letecká prezentace nemovitostí">
+            <figure className="presentation-photo presentation-photo--photographer">
+              <img src="/images/presentation/photographer.png" alt="Fotograf při focení světlého interiéru nemovitosti" loading="lazy" />
+            </figure>
+            <figure className="presentation-photo presentation-photo--aerial">
+              <img src="/images/presentation/aerial-house.png" alt="Ilustrační letecký pohled na rodinný dům, zahradu a okolí" loading="lazy" />
+            </figure>
+            <img className="presentation-showcase__drone" src="/images/presentation/camera-drone.png" alt="" aria-hidden="true" loading="lazy" />
+            <div className="presentation-showcase__interiors" aria-label="Ukázky interiérů">
               {[
-                ['living', 'Obývací pokoj'],
-                ['kitchen', 'Kuchyň a jídelna'],
+                ['living', 'Světlý obývací pokoj'],
                 ['bedroom', 'Ložnice'],
-                ['bathroom', 'Koupelna'],
-                ['balcony', 'Balkon s výhledem'],
-              ].map(([name, alt]) => (
-                <div className="property-presentation__thumbnail" key={name}>
-                  <img src={`/images/presentation/${name}.png`} alt={alt} loading="lazy" />
-                </div>
-              ))}
+                ['kitchen', 'Kuchyň a jídelna'],
+              ].map(([name, alt]) => <figure key={name}><img src={`/images/presentation/${name}.png`} alt={alt} loading="lazy" /></figure>)}
             </div>
           </div>
-          <div className="property-presentation__note" aria-hidden="true">Detaily,<br />které dělají<br />rozdíl <span>⤴</span></div>
         </div>
       </section>
       <section className="property-pricing" aria-labelledby="pricing-title">

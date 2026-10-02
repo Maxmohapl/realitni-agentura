@@ -3075,3 +3075,61 @@
 .questionnaire-choices svg {flex-shrink:0;}
 .questionnaire select {width:100%;min-height:50px;padding:12px;border:1px solid #dce3ed;border-radius:8px;background:#fff;color:#102c4e;font:inherit;}
 @media(max-width:767px){.questionnaire-choices button{padding:18px 14px;gap:12px;}.questionnaire-title{font-size:23px;}.questionnaire-choices strong{font-size:16px;}}
+
+
+/* Photography and drone presentation, matched to the supplied reference. */
+.presentation-showcase { overflow: hidden; padding: 64px max(6vw, calc((100vw - 1468px) / 2)); background: radial-gradient(ellipse at 85% 45%, #dfF1ff 0%, #f5fbff 48%, #fff 82%); }
+.presentation-showcase__shell { display: grid; grid-template-columns: 43% 57%; align-items: center; max-width: 1468px; margin: 0 auto; }
+.presentation-showcase__copy { position: relative; z-index: 1; }
+.presentation-showcase h2 { margin: 0 0 22px; color: #050e22; font-size: clamp(38px, 4.2vw, 68px); font-weight: 900; line-height: 1.02; letter-spacing: -.05em; }
+.presentation-showcase h2 span { color: #ff071d; }
+.presentation-showcase__lead { margin: 0; max-width: 540px; font-size: clamp(17px, 1.5vw, 23px); line-height: 1.35; color: #657ab0; }
+.presentation-showcase__features { display: grid; gap: 26px; margin-top: 28px; }
+.presentation-showcase__feature { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; align-items: start; }
+.presentation-showcase__feature > span { display: grid; place-items: center; height: 72px; border: 1px solid #e0edff; border-radius: 18px; background: #fff; color: #087aff; box-shadow: 0 6px 24px rgb(37 121 236 / 5%); }
+.presentation-showcase__feature h3, .presentation-showcase__feature h4 { margin: 2px 0 5px; color: #050e22; font-size: 20px; font-weight: 800; line-height: 1.15; letter-spacing: -.025em; }
+.presentation-showcase__feature p { margin: 0; color: #657ab0; font-size: 17px; line-height: 1.4; }
+.presentation-showcase__video { margin-top: 36px; }
+.presentation-showcase__eyebrow { margin: 0 0 8px; color: #087aff; font-size: 14px; font-weight: 800; letter-spacing: .08em; }
+.presentation-showcase__video > h3 { margin: 0 0 12px; color: #050e22; font-size: clamp(30px, 2.75vw, 44px); line-height: 1.05; font-weight: 900; letter-spacing: -.04em; }
+.presentation-showcase__video .presentation-showcase__features { margin-top: 24px; gap: 22px; }
+.presentation-showcase__button { display: inline-flex; align-items: center; justify-content: center; margin-top: 26px; padding: 17px 28px; border-radius: 16px; background: #ff071d; color: #fff; font-size: 20px; font-weight: 750; text-decoration: none; box-shadow: 0 12px 28px rgb(255 7 29 / 13%); }
+.presentation-showcase__button:hover { background: #db0014; }
+.presentation-showcase__button:focus-visible { outline: 3px solid #086cff; outline-offset: 5px; }
+/* Each photograph has its own frame and responsive position. */
+.presentation-showcase__visual { position: relative; width: 106%; margin-left: 4%; aspect-ratio: 1 / 1.12; isolation: isolate; }
+.presentation-photo { position: absolute; margin: 0; overflow: hidden; border: 7px solid #fff; background: #fff; box-shadow: 0 18px 45px rgb(53 129 198 / 16%); }
+.presentation-photo img, .presentation-showcase__interiors img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.presentation-photo--photographer { top: 2%; left: 9%; width: 89%; height: 52%; border-radius: 70px 46px 46px 46px; transform: rotate(3deg); }
+.presentation-photo--photographer img { object-position: 40% center; }
+.presentation-photo--aerial { z-index: 2; top: 44%; left: 4%; width: 82%; height: 49%; border-radius: 38px; transform: rotate(12deg); }
+.presentation-photo--aerial img { object-position: center; }
+.presentation-showcase__visual::after { content: ''; position: absolute; z-index: 3; top: 40%; left: 52%; width: 34%; height: 15%; border-radius: 50%; background: radial-gradient(ellipse, rgb(255 255 255 / 85%) 0%, rgb(244 250 255 / 55%) 38%, transparent 72%); filter: blur(15px); pointer-events: none; }
+.presentation-showcase__drone { position: absolute; z-index: 4; top: 39%; left: 53%; width: 32%; height: auto; filter: drop-shadow(0 14px 10px rgb(16 44 78 / 16%)); pointer-events: none; }
+.presentation-showcase__interiors { position: absolute; z-index: 3; top: 40%; right: 0; width: 25%; display: grid; gap: 9px; padding: 11px; border-radius: 32px; background: #fff; box-shadow: 0 14px 35px rgb(53 129 198 / 16%); transform: rotate(9deg); }
+.presentation-showcase__interiors figure { margin: 0; aspect-ratio: 1.13; border-radius: 20px; overflow: hidden; }
+@media (max-width: 1050px) {
+  .presentation-showcase__shell { grid-template-columns: 50% 50%; }
+  .presentation-showcase__feature { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+  .presentation-showcase__feature > span { height: 56px; border-radius: 14px; }
+  .presentation-showcase__feature p { font-size: 16px; }
+  .presentation-showcase__visual { width: 108%; margin-left: 0; }
+  .presentation-photo { border-width: 5px; }
+  .presentation-photo--photographer { border-radius: 40px 28px 28px; }
+  .presentation-showcase__interiors { padding: 7px; gap: 6px; border-radius: 22px; }
+  .presentation-showcase__interiors figure { border-radius: 14px; }
+}
+@media (max-width: 760px) {
+  .presentation-showcase { padding: 42px 6vw 32px; }
+  .presentation-showcase__shell { display: flex; flex-direction: column; gap: 32px; }
+  .presentation-showcase__copy { width: 100%; }
+  .presentation-showcase h2 { font-size: clamp(34px, 7.8vw, 52px); }
+  .presentation-showcase__lead { max-width: none; }
+  .presentation-showcase__button { font-size: 17px; padding: 16px 20px; max-width: 100%; text-align: center; }
+  .presentation-showcase__visual { width: 100%; margin: 0; aspect-ratio: .9; }
+  .presentation-photo--photographer { left: 3%; width: 94%; height: 48%; border-radius: 32px; }
+  .presentation-photo--aerial { left: 1%; top: 43%; width: 83%; height: 40%; border-radius: 24px; transform: rotate(7deg); }
+  .presentation-showcase__drone { top: 37%; left: 48%; width: 38%; }
+  .presentation-showcase__visual::after { top: 38%; left: 47%; width: 40%; height: 16%; filter: blur(10px); }
+  .presentation-showcase__interiors { top: 41%; right: 0; width: 28%; transform: rotate(6deg); }
+}

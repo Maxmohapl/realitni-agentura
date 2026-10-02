@@ -88,7 +88,8 @@ export default function FinanceCalculator() {
               <p className="mortgage-rate">modelová sazba {result.rate.toLocaleString('cs-CZ')} % p. a.</p>
               {insurance && <p className="mortgage-insurance">včetně odhadu pojištění {money.format(Math.round(result.insurancePayment))} Kč/měs.</p>}
               <div className="mortgage-summary"><span>Úvěr <strong>{money.format(result.loan)} Kč</strong></span><span>Celkem za {result.years} let <strong>{money.format(Math.round(result.totalPaid))} Kč</strong></span></div>
-              <a href={contactUrl} className="mortgage-compare">POROVNAT<br />HYPOTÉKY<ArrowRight size={28} aria-hidden="true" /></a>
+              <a href="https://gpf.cz/produkty-a-sluzby" target="_blank" rel="noopener noreferrer" className="mortgage-compare">POROVNAT HYPOTÉKY U GPF<ArrowRight size={28} aria-hidden="true" /></a>
+              <p className="mortgage-disclaimer">Přesnou nabídku si ověřte v kalkulačce Gepard Finance. Tlačítko ji otevře v nové záložce.</p>
               <ul>{['Porovnání nabídek od více bank','Nezávazná konzultace zdarma','Pomoc s vyřízením hypotéky'].map(text => <li key={text}><Check size={16} aria-hidden="true" />{text}</li>)}</ul>
             </div>
           </div>
