@@ -1,3 +1,4 @@
+import OptimizedImage from '@/components/OptimizedImage';
 import type { Metadata } from 'next';
 import { ArrowRight, KeyRound, Home, UsersRound, Star, Camera, ImageIcon, SquarePlay, Drone, ChartColumnIncreasing, MapPin, FileText, ShieldCheck, PencilLine, Coins } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
@@ -31,18 +32,18 @@ export default function ServicesPage() {
               <ArrowRight size={22} aria-hidden="true" />
             </a>
 
-            <img
+            <OptimizedImage
               className="services-hero__note"
-              src="/images/services/note-hero.png"
+              src="/images/services/note-hero.webp"
               alt=""
               aria-hidden="true"
             />
           </div>
 
           <div className="services-hero__visual" aria-hidden="true">
-            <img
+            <OptimizedImage
               className="services-hero__image"
-              src="/images/services/hero-combined.png"
+              src="/images/services/hero-combined.webp"
               alt=""
             />
             <div className="services-hero__card">
@@ -50,9 +51,9 @@ export default function ServicesPage() {
                 <KeyRound strokeWidth={1.8} aria-hidden="true" />
               </span>
               <strong>Od prvního rozhovoru až po předání klíčů.</strong>
-              <button type="button" aria-label="Pokračovat">
+              <a href="#prodej-nemovitosti" aria-label="Přejít na přehled služeb">
                 <ArrowRight size={24} aria-hidden="true" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -101,21 +102,9 @@ export default function ServicesPage() {
             </div>
             <a className="presentation-showcase__button" href="/kontakt?sluzba=Prezentace%20nemovitosti">Chci profesionální prezentaci</a>
           </div>
-          <div className="presentation-showcase__visual" aria-label="Fotografie a letecká prezentace nemovitostí">
-            <figure className="presentation-photo presentation-photo--photographer">
-              <img src="/images/presentation/photographer.png" alt="Fotograf při focení světlého interiéru nemovitosti" loading="lazy" />
-            </figure>
-            <figure className="presentation-photo presentation-photo--aerial">
-              <img src="/images/presentation/aerial-house.png" alt="Ilustrační letecký pohled na rodinný dům, zahradu a okolí" loading="lazy" />
-            </figure>
-            <img className="presentation-showcase__drone" src="/images/presentation/camera-drone.png" alt="" aria-hidden="true" loading="lazy" />
-            <div className="presentation-showcase__interiors" aria-label="Ukázky interiérů">
-              {[
-                ['living', 'Světlý obývací pokoj'],
-                ['bedroom', 'Ložnice'],
-                ['kitchen', 'Kuchyň a jídelna'],
-              ].map(([name, alt]) => <figure key={name}><img src={`/images/presentation/${name}.png`} alt={alt} loading="lazy" /></figure>)}
-            </div>
+          <div className="presentation-showcase__visual presentation-showcase__visual--supplied" aria-label="Fotografie interiérů a exteriéru nemovitostí">
+            <OptimizedImage className="presentation-showcase__supplied" src="/images/presentation/property-presentation-supplied.webp" alt="Obývací pokoj s jídelnou, exteriér domů u vinice a detaily interiérů" loading="lazy" />
+            <OptimizedImage className="presentation-showcase__drone" src="/images/presentation/camera-drone.webp" alt="" aria-hidden="true" loading="lazy" />
           </div>
         </div>
       </section>
@@ -124,7 +113,7 @@ export default function ServicesPage() {
           <h2 id="pricing-title">Správné nacenění, které <span>rozhoduje.</span></h2>
           <div className="property-pricing__layout">
             <div className="property-pricing__visual">
-              <img src="/images/services/pricing-reference.png" alt="Makléř s klienty porovnává tržní data a cenu nemovitosti. Reálná data pro lepší rozhodnutí." loading="lazy" />
+              <OptimizedImage src="/images/services/pricing-reference.webp" alt="Makléř s klienty porovnává tržní data a cenu nemovitosti. Reálná data pro lepší rozhodnutí." loading="lazy" />
             </div>
             <div className="property-pricing__copy">
               <p className="property-pricing__lead">Správná cena nemovitosti vychází z detailní znalosti trhu, lokality, stavu nemovitosti a aktuální poptávky. Dobře nastavená cena přitahuje vážné zájemce a pomáhá maximalizovat výslednou hodnotu prodeje.</p>

@@ -1,4 +1,5 @@
 'use client';
+import OptimizedImage from '@/components/OptimizedImage';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
 
@@ -36,7 +37,7 @@ export default function ProjectCarousel({ selectedId, onSelect }: { selectedId?:
   <div className="projects-track" ref={track} role="region" aria-label="Posouvatelný seznam projektů" tabIndex={0} onKeyDown={event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();move(event.key==='ArrowRight'?1:-1);}}}>
    {projects.map(project=><article className={`project-tile${selectedId === project.id ? ' project-tile--selected' : ''}`} key={project.id}>
     <button type="button" className="project-tile__preview" onClick={()=>onSelect?.(project.id)} aria-label={`Zobrazit ${project.name}`} aria-pressed={selectedId === project.id}>
-     <div className="project-tile__image"><img src={project.thumbnail || '/images/projects/project-1.png'} alt={project.name} loading="lazy" onError={event => { event.currentTarget.src = '/images/projects/project-1.png'; }} /></div>
+     <div className="project-tile__image"><OptimizedImage src={project.thumbnail || '/images/projects/project-1.webp'} alt={project.name} loading="lazy" onError={event => { event.currentTarget.srcset = ''; event.currentTarget.src = '/images/projects/project-1.webp'; }} /></div>
      <h3>{project.name}</h3><p className="project-tile__location">{project.location}</p><p>{project.description}</p><span className="project-tile__link">Zobrazit projekt <ArrowRight size={18} /></span>
     </button></article>)}
   </div>

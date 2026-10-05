@@ -36,12 +36,12 @@ export const propertyCategories: PropertyCategory[] = [
 ];
 
 export const propertyCategoryIcons: Record<PropertyCategory, string> = {
-  Byty: '/assets/realitni/icon_filter_byty.png',
-  Domy: '/assets/realitni/icon_filter_domy.png',
-  Pozemky: '/assets/realitni/icon_filter_pozemky.png',
-  Komerční: '/assets/realitni/icon_filter_komercni.png',
-  Ostatní: '/assets/realitni/icon_filter_ostatni.png',
-  Projekty: '/assets/realitni/icon_filter_projekty.png',
+  Byty: '/assets/realitni/icon_filter_byty.webp',
+  Domy: '/assets/realitni/icon_filter_domy.webp',
+  Pozemky: '/assets/realitni/icon_filter_pozemky.webp',
+  Komerční: '/assets/realitni/icon_filter_komercni.webp',
+  Ostatní: '/assets/realitni/icon_filter_ostatni.webp',
+  Projekty: '/assets/realitni/icon_filter_projekty.webp',
 };
 
 // Reálné nabídky se načítají výhradně ze synchronizace Urbium.

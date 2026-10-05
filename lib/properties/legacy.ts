@@ -25,6 +25,6 @@ export const legacyProperties: Property[] = propertyListings.map((listing) => ({
   features: [], equipment: [],
   images: [{ url: listing.image, alt: listing.title, order: 0, cover: true }],
   videos: [], virtualTours: [],
-  agent: { id: 'radek-mezl', name: 'Bc. Radek Mézl', phone: '+420 734 760 779', email: 'radek.mezl@realitni-agentura.cz', photo: '/images/team/radek-mezl.png' },
+  agent: { id: 'radek-mezl', name: 'Bc. Radek Mézl', phone: '+420 734 760 779', email: 'radek.mezl@realitni-agentura.cz', photo: '/images/team/radek-mezl.webp' },
   branch: 'Olomouc',
 }));

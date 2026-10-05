@@ -1,4 +1,5 @@
 'use client';
+import OptimizedImage from '@/components/OptimizedImage';
 
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Home, MapPin, Coins, FileCheck2, ChartColumnIncreasing, Camera, UsersRound, FileText } from 'lucide-react';
@@ -10,7 +11,7 @@ const services = [
     accent: 'nejlepší cenu.',
     description: 'Zajistíme kompletní servis pro prodej vaší nemovitosti od profesionální prezentace až po právní zajištění a předání kupujícímu.',
     action: 'Chci prodat nemovitost',
-    image: '/images/services/living-room.png',
+    image: '/images/services/living-room.webp',
     features: [
               {
                 Icon: ChartColumnIncreasing,
@@ -40,7 +41,7 @@ const services = [
     accent: 'bez zbytečného rizika.',
     description: 'Pomůžeme vám s výběrem vhodné nemovitosti, prověříme lokalitu i technický stav, zkontrolujeme smlouvy a provedeme vás celým procesem až po bezpečné předání.',
     action: 'Chci koupit nemovitost',
-    image: '/images/services/buy-house.png',
+    image: '/images/services/buy-house.webp',
     features: [
       { Icon: Home, title: 'Vyhledání nemovitosti', text: 'Najdeme vhodné nabídky podle vašich požadavků a rozpočtu.' },
       { Icon: MapPin, title: 'Analýza lokality', text: 'Prověříme dostupnost, občanskou vybavenost a potenciál lokality.' },
@@ -54,7 +55,7 @@ const services = [
     accent: 'bez starostí.',
     description: 'Zajistíme kompletní servis pronájmu od stanovení ceny a prezentace až po výběr nájemce, smlouvy a předání bytu či domu.',
     action: 'Chci pronajmout nemovitost',
-    image: '/images/services/rental-contracts.png',
+    image: '/images/services/rental-contracts.webp',
     features: [
       { Icon: ChartColumnIncreasing, title: 'Stanovení nájemného', text: 'Pomůžeme určit správnou cenu pronájmu podle lokality, stavu a aktuální situace na trhu.' },
       { Icon: Camera, title: 'Příprava nabídky a prezentace', text: 'Vytvoříme atraktivní inzerci včetně fotografií a prezentace nemovitosti.' },
@@ -91,14 +92,14 @@ export default function ServiceCarousel() {
           ))}
         </div>
         <div className={`service-detail__image service-detail__enter${activeIndex === 2 ? ' service-detail__image--rental' : activeIndex === 1 ? ' service-detail__image--masked' : ''}`} key={`image-${activeIndex}`} aria-hidden="true">
-          <img src={service.image} alt="" />
+          <OptimizedImage loading="lazy" src={service.image} alt="" />
         </div>
         <div className="service-detail__pager" aria-label="Navigace služeb">
           <button type="button" aria-label="Předchozí služba" onClick={() => changeSlide(-1)}><ArrowLeft size={19} aria-hidden="true" /></button>
           <strong aria-live="polite" aria-atomic="true"><span className="sr-only">{service.label}, </span>{activeIndex + 1} / {services.length}</strong>
           <button type="button" aria-label="Další služba" onClick={() => changeSlide(1)}><ArrowRight size={21} aria-hidden="true" /></button>
         </div>
-        <img className="service-detail__note" src="/images/services/note-detail.png" alt="" aria-hidden="true" />
+        <OptimizedImage className="service-detail__note" src="/images/services/note-detail.webp" alt="" aria-hidden="true" />
       </div>
     </section>
   );

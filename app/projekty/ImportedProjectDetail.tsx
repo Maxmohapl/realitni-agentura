@@ -1,3 +1,4 @@
+import OptimizedImage from '@/components/OptimizedImage';
 import { ArrowLeft, ArrowRight, Check, MapPin } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
 import type { ProjectSummary } from './projects';
@@ -24,7 +25,7 @@ export default function ImportedProjectDetail({ project }: { project: ProjectSum
             <a className="projects-button" href={`/kontakt?projekt=${encodeURIComponent(project.name)}`}>Mám zájem o projekt<ArrowRight size={20} /></a>
           </div>
           <figure className="compact-project__image">
-            <img src={project.thumbnail || '/images/projects/project-1.png'} alt={`${project.name} – ${project.location}`} />
+            <OptimizedImage src={project.thumbnail || '/images/projects/project-1.webp'} alt={`${project.name} – ${project.location}`} />
           </figure>
         </div>
       </header>

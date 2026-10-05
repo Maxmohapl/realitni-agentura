@@ -1,4 +1,5 @@
 'use client';
+import OptimizedImage from '@/components/OptimizedImage';
 
 import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -44,7 +45,7 @@ export default function SiteHeader({
   return (
     <header ref={headerRef} className="site-header">
       <a className="brand" href="/" aria-label="Realitní Agentura">
-        <img src="/images/hero/navbar-logo.png" alt="Realitní Agentura" />
+        <OptimizedImage src="/images/hero/navbar-logo.webp" alt="Realitní Agentura" />
       </a>
 
       <nav id="site-navigation" className={`site-nav${menuOpen ? " site-nav--open" : ""}`} aria-label="Hlavní navigace">

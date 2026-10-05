@@ -1,4 +1,5 @@
 'use client';
+import OptimizedImage from '@/components/OptimizedImage';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -40,7 +41,7 @@ const agents: Agent[] = [
     role: 'realitní makléř',
     phone: '+420 602 526 500',
     email: 'jaroslav.bejdak@realitni-agentura.cz',
-    image: '/images/team/jaroslav-bejdak.png',
+    image: '/images/team/jaroslav-bejdak.webp',
     url: '/makleri/jaroslav-bejdak',
     position: {
       left: '32%',
@@ -56,7 +57,7 @@ const agents: Agent[] = [
     role: 'realitní makléřka',
     phone: '+420 724 035 099',
     email: 'iva.dokoupilova@realitni-agentura.cz',
-    image: '/images/team/iva-dokoupilova.png',
+    image: '/images/team/iva-dokoupilova.webp',
     url: '/makleri/iva-dokoupilova',
     position: {
       left: '41.7%',
@@ -72,7 +73,7 @@ const agents: Agent[] = [
     role: 'realitní makléřka',
     phone: '+420 731 594 867',
     email: 'kocikova@egpreality.cz',
-    image: '/images/team/leona-kocikova.png',
+    image: '/images/team/leona-kocikova.webp',
     url: '/makleri/leona-kocikova',
     position: {
       left: '51.4%',
@@ -88,7 +89,7 @@ const agents: Agent[] = [
     role: 'majitel realitní kanceláře',
     phone: '+420 734 760 779',
     email: 'radek.mezl@realitni-agentura.cz',
-    image: '/images/team/radek-mezl.png',
+    image: '/images/team/radek-mezl.webp',
     url: '/makleri/radek-mezl',
     position: {
       left: '61.1%',
@@ -104,7 +105,7 @@ const agents: Agent[] = [
     role: 'realitní makléř',
     phone: '+420 774 650 001',
     email: 'prochazkova@egpreality.cz',
-    image: '/images/team/tomas-prochazka.png',
+    image: '/images/team/tomas-prochazka.webp',
     url: '/makleri/tomas-prochazka',
     position: {
       left: '70.8%',
@@ -120,7 +121,7 @@ const agents: Agent[] = [
     role: 'realitní makléřka',
     phone: '+420 774 650 001',
     email: 'prochazkova@egpreality.cz',
-    image: '/images/team/eva-prochazkova.png',
+    image: '/images/team/eva-prochazkova.webp',
     url: '/makleri/eva-prochazkova',
     position: {
       left: '80.5%',
@@ -136,7 +137,7 @@ const agents: Agent[] = [
     role: 'realitní makléřka',
     phone: '+420 737 253 966',
     email: 'uricarova.anna@seznam.cz',
-    image: '/images/team/anna-uricarova.png',
+    image: '/images/team/anna-uricarova.webp',
     url: '/makleri/anna-uricarova',
     position: {
       left: '90.2%',
@@ -156,8 +157,8 @@ const stats = [
   },
   {
     icon: UsersRound,
-    value: '7',
-    label: 'Specialistů ve vašem týmu',
+    value: '8 + 1',
+    label: 'Osm makléřů a jeden právník',
   },
   {
     icon: Handshake,
@@ -175,7 +176,7 @@ const services = [
   {
     title: 'Prodej nemovitosti',
     description: 'Prodejte za správnou cenu a bez starostí.',
-    icon: '/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.png',
+    icon: '/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.webp',
     accent: 'red',
     href: '/nase-sluzby?sluzba=prodej#prodej-nemovitosti',
     points: [
@@ -191,7 +192,7 @@ const services = [
   {
     title: 'Koupě nemovitosti',
     description: 'Najděte nemovitost bez zbytečného rizika.',
-    icon: '/images/service-icons/blue_house_and_red_key_icon-cropped.png',
+    icon: '/images/service-icons/blue_house_and_red_key_icon-cropped.webp',
     accent: 'blue',
     href: '/nase-sluzby?sluzba=koupe#prodej-nemovitosti',
     points: [
@@ -207,7 +208,7 @@ const services = [
   {
     title: 'Pronájem nemovitosti',
     description: 'Pronajměte bezpečně a správnému člověku.',
-    icon: '/images/service-icons/blue_building_and_red_user_icon-cropped.png',
+    icon: '/images/service-icons/blue_building_and_red_user_icon-cropped.webp',
     accent: 'mixed',
     href: '/nase-sluzby?sluzba=pronajem#prodej-nemovitosti',
     points: [
@@ -254,11 +255,11 @@ export default function HomePage() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__background" aria-hidden="true">
           <div className="hero__watermark">
-            <img src="/images/hero/team-mark.png" alt="" />
+            <OptimizedImage src="/images/hero/team-mark.webp" alt="" />
           </div>
-          <img
+          <OptimizedImage
             className="hero__cityline"
-            src="/images/hero/olomouc-skyline.png"
+            src="/images/hero/olomouc-skyline.webp"
             alt=""
           />
         </div>
@@ -334,7 +335,7 @@ export default function HomePage() {
                       }
                     }}
                   >
-                    <img
+                    <OptimizedImage
                       className="agent__image"
                       src={agent.image}
                       alt={agent.name}
@@ -418,11 +419,12 @@ export default function HomePage() {
                 <a
                   className={`service-card service-card--${service.accent}`}
                   href={service.href}
+                  aria-label={`${service.title} – ${service.description}`}
                   key={service.title}
                 >
                   <div className="service-card__inner">
                     <div className="service-card__default">
-                      <img
+                      <OptimizedImage
                         className="service-card__icon"
                         src={service.icon}
                         alt=""
@@ -437,7 +439,7 @@ export default function HomePage() {
 
                     <div className="service-card__hover">
                       <div className="service-card__hover-title">
-                        <img
+                        <OptimizedImage
                           className="service-card__hover-icon"
                           src={service.icon}
                           alt=""

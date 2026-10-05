@@ -186,7 +186,6 @@
   .finance-copy { display:grid; grid-template-columns:1fr; padding:0; }
   .finance-copy h1 { font-size:clamp(32px,9vw,42px); line-height:1.1; }
   .finance-copy h1 br { display:none; }
-  .finance-copy h1 span::before { content:' '; }
   .finance-lead { margin-bottom:20px; }
   .finance-photo { width:100%; margin:0 0 20px; border-radius:16px; aspect-ratio:2.4; }
   .finance-benefits { grid-row:5; gap:14px; margin-bottom:8px; }
@@ -316,4 +315,33 @@
  .home-page .service-card__default p { font-size:12px; }
  .home-page .service-card__button { margin-top:auto; }
  .home-page .service-card__hover { display:none; }
+}
+
+/* Tablet: keep service statistics clear of the hero photograph. */
+@media (min-width:768px) and (max-width:1050px) {
+ .services-hero { padding-top:120px; padding-bottom:28px; }
+ .services-hero__shell { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; min-height:0; }
+ .services-hero__copy { width:100%; padding-top:20px; }
+ .services-hero h1 { font-size:clamp(38px,5vw,50px); }
+ .services-hero__lead { width:100%; }
+ .services-hero__visual { position:relative; inset:auto; width:100%; min-height:390px; }
+ .services-hero__card { right:0; bottom:10px; width:100%; grid-template-columns:30px 1fr 38px; gap:10px; padding:12px; }
+ .services-hero__card strong { font-size:14px; }
+ .services-hero__stats { position:relative; inset:auto; grid-column:1 / -1; justify-content:space-between; gap:20px; padding-top:12px; }
+ .services-hero__note { display:none; }
+}
+
+/* Preserve comfortable reading and touch targets on small phones. */
+.google-reviews__expand { display:none; }
+@media (max-width:767px) {
+ .home-page .google-reviews__carousel:not(.google-reviews__carousel--expanded) article:nth-child(n+4) { display:none; }
+ .google-reviews__expand { display:block; min-height:44px; padding:12px 18px; margin:20px 0; border:1px solid #c5d5e8; border-radius:10px; color:#173a65; background:#fff; font:inherit; cursor:pointer; }
+}
+@media (max-width:480px) {
+ .home-page .service-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+ .home-page .service-card__default { display:grid; grid-template-columns:48px minmax(0,1fr) 44px; align-items:center; gap:8px 14px; padding:18px 16px; }
+ .home-page .service-card__icon { grid-column:1; grid-row:1 / 3; margin:0; }
+ .home-page .service-card h3 { grid-column:2; grid-row:1; margin:0; font-size:17px; text-align:left; }
+ .home-page .service-card__default p { grid-column:2; grid-row:2; margin:0; font-size:14px; text-align:left; }
+ .home-page .service-card__button { grid-column:3; grid-row:1 / 3; align-self:center; margin:0; width:44px; height:44px; }
 }

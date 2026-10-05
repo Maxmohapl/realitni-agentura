@@ -15,27 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Realitní Agentura | Hero sekce',
+  metadataBase: new URL(process.env.SITE_URL || 'https://www.realitni-agentura.cz'),
+  title: 'Realitní Agentura Olomouc | Prodej a pronájem nemovitostí',
   description:
-    'Responzivní hero sekce realitní kanceláře se samostatnými makléři a kontaktní interakcí.',
+    'Prodej, pronájem a odhad ceny nemovitostí v Olomouci a okolí. Profesionální prezentace, osobní přístup a kompletní realitní servis.',
   openGraph: {
-    title: 'Realitní Agentura | Hero sekce',
+    title: 'Realitní Agentura Olomouc',
     description:
-      'Moderní hero sekce realitní kanceláře s interaktivním týmem makléřů.',
+      'Pomůžeme vám s prodejem, pronájmem i financováním nemovitosti v Olomouci a okolí.',
     images: [
       {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Hero sekce Realitní Agentury s týmem makléřů',
+        alt: 'Realitní Agentura Olomouc – tým makléřů',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Realitní Agentura | Hero sekce',
+    title: 'Realitní Agentura Olomouc',
     description:
-      'Moderní hero sekce realitní kanceláře s interaktivním týmem makléřů.',
+      'Pomůžeme vám s prodejem, pronájmem i financováním nemovitosti v Olomouci a okolí.',
     images: ['/og.png'],
   },
 };

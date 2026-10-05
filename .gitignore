@@ -37,3 +37,13 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+*.tsbuildinfo
+
+# Local archives, original media, and audit scratch files
+/image-originals-*/
+/realitni_nemovitosti_assets/
+/upload-*/
+/audit-*/source/
+/audit-*/live-runtime.js
+/.sites-runtime/

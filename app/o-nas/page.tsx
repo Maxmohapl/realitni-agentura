@@ -1,3 +1,4 @@
+import OptimizedImage from '@/components/OptimizedImage';
 import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
@@ -11,14 +12,14 @@ const questions = [
   'Přejete si bungalov nebo patrový dům?',
 ];
 function Visual({ kind, alt }: { kind: string; alt: string }) {
-  return <div className={`about-visual about-visual--${kind}`}><img src="/images/about/reference.png" alt={alt} /></div>;
+  return <div className={`about-visual about-visual--${kind}`}><OptimizedImage src="/images/about/reference.webp" alt={alt} /></div>;
 }
 export default function Page() {
   return (
     <main className="site-shell about-page">
       <SiteHeader activeItem="O nás" />
       <section className="about-intro about-section">
-        <div className="about-owner-portrait"><img src="/images/about/owner-portrait.png" alt="Bc. Radek Mézl, majitel realitní kanceláře" /></div>
+        <div className="about-owner-portrait"><OptimizedImage src="/images/about/owner-portrait.webp" alt="Bc. Radek Mézl, majitel realitní kanceláře" /></div>
         <div className="about-copy">
           <div className="about-eyebrow">O NÁS<span /></div>
           <h1>Pár slov <em>úvodem</em></h1>
@@ -45,7 +46,7 @@ export default function Page() {
           <ul>{questions.map(question => <li key={question}><span className="about-list-dot" aria-hidden="true">•</span>{question}</li>)}</ul>
           <a className="about-button" href="/kontakt">KONTAKT<ArrowRight /></a>
         </div>
-        <div className="about-contact-art"><img src="/images/about/house-agent.png" alt="Ilustrace domu s realitním makléřem" loading="lazy" /></div>
+        <div className="about-contact-art"><OptimizedImage src="/images/about/house-agent.webp" alt="Ilustrace domu s realitním makléřem" loading="lazy" /></div>
       </section>
     </main>
   );

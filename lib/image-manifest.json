@@ -1,0 +1,818 @@
+{
+  "/assets/realitni/01_city_olomouc_lineart.png": {
+    "src": "/assets/realitni/01_city_olomouc_lineart.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/assets/realitni/01_city_olomouc_lineart-480w.webp 480w, /assets/realitni/01_city_olomouc_lineart-960w.webp 960w, /assets/realitni/01_city_olomouc_lineart.webp 1600w"
+  },
+  "/assets/realitni/01_city_olomouc_lineart.webp": {
+    "src": "/assets/realitni/01_city_olomouc_lineart.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/assets/realitni/01_city_olomouc_lineart-480w.webp 480w, /assets/realitni/01_city_olomouc_lineart-960w.webp 960w, /assets/realitni/01_city_olomouc_lineart.webp 1600w"
+  },
+  "/assets/realitni/02_slogan_vas_domov_nase_starost.png": {
+    "src": "/assets/realitni/02_slogan_vas_domov_nase_starost.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/assets/realitni/02_slogan_vas_domov_nase_starost-480w.webp 480w, /assets/realitni/02_slogan_vas_domov_nase_starost-960w.webp 960w, /assets/realitni/02_slogan_vas_domov_nase_starost.webp 1600w"
+  },
+  "/assets/realitni/02_slogan_vas_domov_nase_starost.webp": {
+    "src": "/assets/realitni/02_slogan_vas_domov_nase_starost.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/assets/realitni/02_slogan_vas_domov_nase_starost-480w.webp 480w, /assets/realitni/02_slogan_vas_domov_nase_starost-960w.webp 960w, /assets/realitni/02_slogan_vas_domov_nase_starost.webp 1600w"
+  },
+  "/assets/realitni/icon_favorite_heart.png": {
+    "src": "/assets/realitni/icon_favorite_heart.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_favorite_heart-480w.webp 480w, /assets/realitni/icon_favorite_heart-960w.webp 960w, /assets/realitni/icon_favorite_heart.webp 1254w"
+  },
+  "/assets/realitni/icon_favorite_heart.webp": {
+    "src": "/assets/realitni/icon_favorite_heart.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_favorite_heart-480w.webp 480w, /assets/realitni/icon_favorite_heart-960w.webp 960w, /assets/realitni/icon_favorite_heart.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_byty.png": {
+    "src": "/assets/realitni/icon_filter_byty.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_byty-480w.webp 480w, /assets/realitni/icon_filter_byty-960w.webp 960w, /assets/realitni/icon_filter_byty.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_byty.webp": {
+    "src": "/assets/realitni/icon_filter_byty.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_byty-480w.webp 480w, /assets/realitni/icon_filter_byty-960w.webp 960w, /assets/realitni/icon_filter_byty.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_domy.png": {
+    "src": "/assets/realitni/icon_filter_domy.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_domy-480w.webp 480w, /assets/realitni/icon_filter_domy-960w.webp 960w, /assets/realitni/icon_filter_domy.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_domy.webp": {
+    "src": "/assets/realitni/icon_filter_domy.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_domy-480w.webp 480w, /assets/realitni/icon_filter_domy-960w.webp 960w, /assets/realitni/icon_filter_domy.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_komercni.png": {
+    "src": "/assets/realitni/icon_filter_komercni.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_komercni-480w.webp 480w, /assets/realitni/icon_filter_komercni-960w.webp 960w, /assets/realitni/icon_filter_komercni.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_komercni.webp": {
+    "src": "/assets/realitni/icon_filter_komercni.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_komercni-480w.webp 480w, /assets/realitni/icon_filter_komercni-960w.webp 960w, /assets/realitni/icon_filter_komercni.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_ostatni.png": {
+    "src": "/assets/realitni/icon_filter_ostatni.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_ostatni-480w.webp 480w, /assets/realitni/icon_filter_ostatni-960w.webp 960w, /assets/realitni/icon_filter_ostatni.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_ostatni.webp": {
+    "src": "/assets/realitni/icon_filter_ostatni.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_ostatni-480w.webp 480w, /assets/realitni/icon_filter_ostatni-960w.webp 960w, /assets/realitni/icon_filter_ostatni.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_pozemky.png": {
+    "src": "/assets/realitni/icon_filter_pozemky.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_pozemky-480w.webp 480w, /assets/realitni/icon_filter_pozemky-960w.webp 960w, /assets/realitni/icon_filter_pozemky.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_pozemky.webp": {
+    "src": "/assets/realitni/icon_filter_pozemky.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_pozemky-480w.webp 480w, /assets/realitni/icon_filter_pozemky-960w.webp 960w, /assets/realitni/icon_filter_pozemky.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_projekty.png": {
+    "src": "/assets/realitni/icon_filter_projekty.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_projekty-480w.webp 480w, /assets/realitni/icon_filter_projekty-960w.webp 960w, /assets/realitni/icon_filter_projekty.webp 1254w"
+  },
+  "/assets/realitni/icon_filter_projekty.webp": {
+    "src": "/assets/realitni/icon_filter_projekty.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_filter_projekty-480w.webp 480w, /assets/realitni/icon_filter_projekty-960w.webp 960w, /assets/realitni/icon_filter_projekty.webp 1254w"
+  },
+  "/assets/realitni/icon_location_pin.png": {
+    "src": "/assets/realitni/icon_location_pin.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_location_pin-480w.webp 480w, /assets/realitni/icon_location_pin-960w.webp 960w, /assets/realitni/icon_location_pin.webp 1254w"
+  },
+  "/assets/realitni/icon_location_pin.webp": {
+    "src": "/assets/realitni/icon_location_pin.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/assets/realitni/icon_location_pin-480w.webp 480w, /assets/realitni/icon_location_pin-960w.webp 960w, /assets/realitni/icon_location_pin.webp 1254w"
+  },
+  "/images/about/house-agent.png": {
+    "src": "/images/about/house-agent.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/about/house-agent-480w.webp 480w, /images/about/house-agent-960w.webp 960w, /images/about/house-agent.webp 1254w"
+  },
+  "/images/about/house-agent.webp": {
+    "src": "/images/about/house-agent.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/about/house-agent-480w.webp 480w, /images/about/house-agent-960w.webp 960w, /images/about/house-agent.webp 1254w"
+  },
+  "/images/about/owner-portrait.png": {
+    "src": "/images/about/owner-portrait.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/about/owner-portrait-480w.webp 480w, /images/about/owner-portrait-960w.webp 960w, /images/about/owner-portrait.webp 1254w"
+  },
+  "/images/about/owner-portrait.webp": {
+    "src": "/images/about/owner-portrait.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/about/owner-portrait-480w.webp 480w, /images/about/owner-portrait-960w.webp 960w, /images/about/owner-portrait.webp 1254w"
+  },
+  "/images/about/reference.png": {
+    "src": "/images/about/reference.webp",
+    "width": 900,
+    "height": 1600,
+    "srcSet": null
+  },
+  "/images/about/reference.webp": {
+    "src": "/images/about/reference.webp",
+    "width": 900,
+    "height": 1600,
+    "srcSet": null
+  },
+  "/images/hero/navbar-logo.png": {
+    "src": "/images/hero/navbar-logo.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/images/hero/navbar-logo-480w.webp 480w, /images/hero/navbar-logo-960w.webp 960w, /images/hero/navbar-logo.webp 1600w"
+  },
+  "/images/hero/navbar-logo.webp": {
+    "src": "/images/hero/navbar-logo.webp",
+    "width": 1600,
+    "height": 533,
+    "srcSet": "/images/hero/navbar-logo-480w.webp 480w, /images/hero/navbar-logo-960w.webp 960w, /images/hero/navbar-logo.webp 1600w"
+  },
+  "/images/hero/olomouc-skyline.png": {
+    "src": "/images/hero/olomouc-skyline.webp",
+    "width": 1600,
+    "height": 601,
+    "srcSet": "/images/hero/olomouc-skyline-480w.webp 479w, /images/hero/olomouc-skyline-960w.webp 960w, /images/hero/olomouc-skyline.webp 1600w"
+  },
+  "/images/hero/olomouc-skyline.webp": {
+    "src": "/images/hero/olomouc-skyline.webp",
+    "width": 1600,
+    "height": 601,
+    "srcSet": "/images/hero/olomouc-skyline-480w.webp 479w, /images/hero/olomouc-skyline-960w.webp 960w, /images/hero/olomouc-skyline.webp 1600w"
+  },
+  "/images/hero/team-mark.png": {
+    "src": "/images/hero/team-mark.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/hero/team-mark-480w.webp 480w, /images/hero/team-mark-960w.webp 960w, /images/hero/team-mark.webp 1536w"
+  },
+  "/images/hero/team-mark.webp": {
+    "src": "/images/hero/team-mark.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/hero/team-mark-480w.webp 480w, /images/hero/team-mark-960w.webp 960w, /images/hero/team-mark.webp 1536w"
+  },
+  "/images/presentation/aerial-house.png": {
+    "src": "/images/presentation/aerial-house.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/presentation/aerial-house-480w.webp 480w, /images/presentation/aerial-house-960w.webp 960w, /images/presentation/aerial-house.webp 1536w"
+  },
+  "/images/presentation/aerial-house.webp": {
+    "src": "/images/presentation/aerial-house.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/presentation/aerial-house-480w.webp 480w, /images/presentation/aerial-house-960w.webp 960w, /images/presentation/aerial-house.webp 1536w"
+  },
+  "/images/presentation/balcony.png": {
+    "src": "/images/presentation/balcony.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/balcony-480w.webp 480w, /images/presentation/balcony-960w.webp 960w, /images/presentation/balcony.webp 1448w"
+  },
+  "/images/presentation/balcony.webp": {
+    "src": "/images/presentation/balcony.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/balcony-480w.webp 480w, /images/presentation/balcony-960w.webp 960w, /images/presentation/balcony.webp 1448w"
+  },
+  "/images/presentation/bathroom.png": {
+    "src": "/images/presentation/bathroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/bathroom-480w.webp 480w, /images/presentation/bathroom-960w.webp 960w, /images/presentation/bathroom.webp 1448w"
+  },
+  "/images/presentation/bathroom.webp": {
+    "src": "/images/presentation/bathroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/bathroom-480w.webp 480w, /images/presentation/bathroom-960w.webp 960w, /images/presentation/bathroom.webp 1448w"
+  },
+  "/images/presentation/bedroom.png": {
+    "src": "/images/presentation/bedroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/bedroom-480w.webp 480w, /images/presentation/bedroom-960w.webp 960w, /images/presentation/bedroom.webp 1448w"
+  },
+  "/images/presentation/bedroom.webp": {
+    "src": "/images/presentation/bedroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/bedroom-480w.webp 480w, /images/presentation/bedroom-960w.webp 960w, /images/presentation/bedroom.webp 1448w"
+  },
+  "/images/presentation/camera-drone.png": {
+    "src": "/images/presentation/camera-drone.webp",
+    "width": 800,
+    "height": 400,
+    "srcSet": null
+  },
+  "/images/presentation/camera-drone.webp": {
+    "src": "/images/presentation/camera-drone.webp",
+    "width": 800,
+    "height": 400,
+    "srcSet": null
+  },
+  "/images/presentation/kitchen.png": {
+    "src": "/images/presentation/kitchen.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/kitchen-480w.webp 480w, /images/presentation/kitchen-960w.webp 960w, /images/presentation/kitchen.webp 1448w"
+  },
+  "/images/presentation/kitchen.webp": {
+    "src": "/images/presentation/kitchen.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/kitchen-480w.webp 480w, /images/presentation/kitchen-960w.webp 960w, /images/presentation/kitchen.webp 1448w"
+  },
+  "/images/presentation/living.png": {
+    "src": "/images/presentation/living.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/living-480w.webp 480w, /images/presentation/living-960w.webp 960w, /images/presentation/living.webp 1448w"
+  },
+  "/images/presentation/living.webp": {
+    "src": "/images/presentation/living.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/living-480w.webp 480w, /images/presentation/living-960w.webp 960w, /images/presentation/living.webp 1448w"
+  },
+  "/images/presentation/photographer.png": {
+    "src": "/images/presentation/photographer.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/photographer-480w.webp 480w, /images/presentation/photographer-960w.webp 960w, /images/presentation/photographer.webp 1448w"
+  },
+  "/images/presentation/photographer.webp": {
+    "src": "/images/presentation/photographer.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/presentation/photographer-480w.webp 480w, /images/presentation/photographer-960w.webp 960w, /images/presentation/photographer.webp 1448w"
+  },
+  "/images/projects/project-1.png": {
+    "src": "/images/projects/project-1.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-1-480w.webp 480w, /images/projects/project-1-960w.webp 960w, /images/projects/project-1.webp 1448w"
+  },
+  "/images/projects/project-1.webp": {
+    "src": "/images/projects/project-1.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-1-480w.webp 480w, /images/projects/project-1-960w.webp 960w, /images/projects/project-1.webp 1448w"
+  },
+  "/images/projects/project-2.png": {
+    "src": "/images/projects/project-2.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-2-480w.webp 480w, /images/projects/project-2-960w.webp 960w, /images/projects/project-2.webp 1448w"
+  },
+  "/images/projects/project-2.webp": {
+    "src": "/images/projects/project-2.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-2-480w.webp 480w, /images/projects/project-2-960w.webp 960w, /images/projects/project-2.webp 1448w"
+  },
+  "/images/projects/project-3.png": {
+    "src": "/images/projects/project-3.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-3-480w.webp 480w, /images/projects/project-3-960w.webp 960w, /images/projects/project-3.webp 1448w"
+  },
+  "/images/projects/project-3.webp": {
+    "src": "/images/projects/project-3.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-3-480w.webp 480w, /images/projects/project-3-960w.webp 960w, /images/projects/project-3.webp 1448w"
+  },
+  "/images/projects/project-4.png": {
+    "src": "/images/projects/project-4.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-4-480w.webp 480w, /images/projects/project-4-960w.webp 960w, /images/projects/project-4.webp 1448w"
+  },
+  "/images/projects/project-4.webp": {
+    "src": "/images/projects/project-4.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/projects/project-4-480w.webp 480w, /images/projects/project-4-960w.webp 960w, /images/projects/project-4.webp 1448w"
+  },
+  "/images/service-icons/blue_building_and_red_user_icon-cropped.png": {
+    "src": "/images/service-icons/blue_building_and_red_user_icon-cropped.webp",
+    "width": 1048,
+    "height": 934,
+    "srcSet": "/images/service-icons/blue_building_and_red_user_icon-cropped-480w.webp 480w, /images/service-icons/blue_building_and_red_user_icon-cropped-960w.webp 960w, /images/service-icons/blue_building_and_red_user_icon-cropped.webp 1048w"
+  },
+  "/images/service-icons/blue_building_and_red_user_icon-cropped.webp": {
+    "src": "/images/service-icons/blue_building_and_red_user_icon-cropped.webp",
+    "width": 1048,
+    "height": 934,
+    "srcSet": "/images/service-icons/blue_building_and_red_user_icon-cropped-480w.webp 480w, /images/service-icons/blue_building_and_red_user_icon-cropped-960w.webp 960w, /images/service-icons/blue_building_and_red_user_icon-cropped.webp 1048w"
+  },
+  "/images/service-icons/blue_building_and_red_user_icon.png": {
+    "src": "/images/service-icons/blue_building_and_red_user_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/blue_building_and_red_user_icon-480w.webp 480w, /images/service-icons/blue_building_and_red_user_icon-960w.webp 960w, /images/service-icons/blue_building_and_red_user_icon.webp 1254w"
+  },
+  "/images/service-icons/blue_building_and_red_user_icon.webp": {
+    "src": "/images/service-icons/blue_building_and_red_user_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/blue_building_and_red_user_icon-480w.webp 480w, /images/service-icons/blue_building_and_red_user_icon-960w.webp 960w, /images/service-icons/blue_building_and_red_user_icon.webp 1254w"
+  },
+  "/images/service-icons/blue_house_and_red_key_icon-cropped.png": {
+    "src": "/images/service-icons/blue_house_and_red_key_icon-cropped.webp",
+    "width": 1057,
+    "height": 1192,
+    "srcSet": "/images/service-icons/blue_house_and_red_key_icon-cropped-480w.webp 480w, /images/service-icons/blue_house_and_red_key_icon-cropped-960w.webp 960w, /images/service-icons/blue_house_and_red_key_icon-cropped.webp 1057w"
+  },
+  "/images/service-icons/blue_house_and_red_key_icon-cropped.webp": {
+    "src": "/images/service-icons/blue_house_and_red_key_icon-cropped.webp",
+    "width": 1057,
+    "height": 1192,
+    "srcSet": "/images/service-icons/blue_house_and_red_key_icon-cropped-480w.webp 480w, /images/service-icons/blue_house_and_red_key_icon-cropped-960w.webp 960w, /images/service-icons/blue_house_and_red_key_icon-cropped.webp 1057w"
+  },
+  "/images/service-icons/blue_house_and_red_key_icon.png": {
+    "src": "/images/service-icons/blue_house_and_red_key_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/blue_house_and_red_key_icon-480w.webp 480w, /images/service-icons/blue_house_and_red_key_icon-960w.webp 960w, /images/service-icons/blue_house_and_red_key_icon.webp 1254w"
+  },
+  "/images/service-icons/blue_house_and_red_key_icon.webp": {
+    "src": "/images/service-icons/blue_house_and_red_key_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/blue_house_and_red_key_icon-480w.webp 480w, /images/service-icons/blue_house_and_red_key_icon-960w.webp 960w, /images/service-icons/blue_house_and_red_key_icon.webp 1254w"
+  },
+  "/images/service-icons/bright_red_and_blue_house_icon.png": {
+    "src": "/images/service-icons/bright_red_and_blue_house_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/bright_red_and_blue_house_icon-480w.webp 480w, /images/service-icons/bright_red_and_blue_house_icon-960w.webp 960w, /images/service-icons/bright_red_and_blue_house_icon.webp 1254w"
+  },
+  "/images/service-icons/bright_red_and_blue_house_icon.webp": {
+    "src": "/images/service-icons/bright_red_and_blue_house_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/bright_red_and_blue_house_icon-480w.webp 480w, /images/service-icons/bright_red_and_blue_house_icon-960w.webp 960w, /images/service-icons/bright_red_and_blue_house_icon.webp 1254w"
+  },
+  "/images/service-icons/building_and_person_icon.png": {
+    "src": "/images/service-icons/building_and_person_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/building_and_person_icon-480w.webp 480w, /images/service-icons/building_and_person_icon-960w.webp 960w, /images/service-icons/building_and_person_icon.webp 1254w"
+  },
+  "/images/service-icons/building_and_person_icon.webp": {
+    "src": "/images/service-icons/building_and_person_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/building_and_person_icon-480w.webp 480w, /images/service-icons/building_and_person_icon-960w.webp 960w, /images/service-icons/building_and_person_icon.webp 1254w"
+  },
+  "/images/service-icons/house_key_vector_icon.png": {
+    "src": "/images/service-icons/house_key_vector_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/house_key_vector_icon-480w.webp 480w, /images/service-icons/house_key_vector_icon-960w.webp 960w, /images/service-icons/house_key_vector_icon.webp 1254w"
+  },
+  "/images/service-icons/house_key_vector_icon.webp": {
+    "src": "/images/service-icons/house_key_vector_icon.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/house_key_vector_icon-480w.webp 480w, /images/service-icons/house_key_vector_icon-960w.webp 960w, /images/service-icons/house_key_vector_icon.webp 1254w"
+  },
+  "/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.png": {
+    "src": "/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.webp",
+    "width": 931,
+    "height": 781,
+    "srcSet": null
+  },
+  "/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.webp": {
+    "src": "/images/service-icons/minimalist_red_house_icon_with_blue_window-cropped.webp",
+    "width": 931,
+    "height": 781,
+    "srcSet": null
+  },
+  "/images/service-icons/minimalist_red_house_icon_with_blue_window.png": {
+    "src": "/images/service-icons/minimalist_red_house_icon_with_blue_window.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/minimalist_red_house_icon_with_blue_window-480w.webp 480w, /images/service-icons/minimalist_red_house_icon_with_blue_window-960w.webp 960w, /images/service-icons/minimalist_red_house_icon_with_blue_window.webp 1254w"
+  },
+  "/images/service-icons/minimalist_red_house_icon_with_blue_window.webp": {
+    "src": "/images/service-icons/minimalist_red_house_icon_with_blue_window.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/service-icons/minimalist_red_house_icon_with_blue_window-480w.webp 480w, /images/service-icons/minimalist_red_house_icon_with_blue_window-960w.webp 960w, /images/service-icons/minimalist_red_house_icon_with_blue_window.webp 1254w"
+  },
+  "/images/services/buy-house.png": {
+    "src": "/images/services/buy-house.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/buy-house-480w.webp 480w, /images/services/buy-house-960w.webp 960w, /images/services/buy-house.webp 1600w"
+  },
+  "/images/services/buy-house.webp": {
+    "src": "/images/services/buy-house.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/buy-house-480w.webp 480w, /images/services/buy-house-960w.webp 960w, /images/services/buy-house.webp 1600w"
+  },
+  "/images/services/finance-reference.png": {
+    "src": "/images/services/finance-reference.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/finance-reference-480w.webp 480w, /images/services/finance-reference-960w.webp 960w, /images/services/finance-reference.webp 1600w"
+  },
+  "/images/services/finance-reference.webp": {
+    "src": "/images/services/finance-reference.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/finance-reference-480w.webp 480w, /images/services/finance-reference-960w.webp 960w, /images/services/finance-reference.webp 1600w"
+  },
+  "/images/services/hero-combined.png": {
+    "src": "/images/services/hero-combined.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/services/hero-combined-480w.webp 480w, /images/services/hero-combined-960w.webp 960w, /images/services/hero-combined.webp 1254w"
+  },
+  "/images/services/hero-combined.webp": {
+    "src": "/images/services/hero-combined.webp",
+    "width": 1254,
+    "height": 1254,
+    "srcSet": "/images/services/hero-combined-480w.webp 480w, /images/services/hero-combined-960w.webp 960w, /images/services/hero-combined.webp 1254w"
+  },
+  "/images/services/hero-house.png": {
+    "src": "/images/services/hero-house.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/hero-house-480w.webp 480w, /images/services/hero-house-960w.webp 960w, /images/services/hero-house.webp 1448w"
+  },
+  "/images/services/hero-house.webp": {
+    "src": "/images/services/hero-house.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/hero-house-480w.webp 480w, /images/services/hero-house-960w.webp 960w, /images/services/hero-house.webp 1448w"
+  },
+  "/images/services/icon-camera.png": {
+    "src": "/images/services/icon-camera.webp",
+    "width": 335,
+    "height": 225,
+    "srcSet": null
+  },
+  "/images/services/icon-camera.webp": {
+    "src": "/images/services/icon-camera.webp",
+    "width": 335,
+    "height": 225,
+    "srcSet": null
+  },
+  "/images/services/icon-chart.png": {
+    "src": "/images/services/icon-chart.webp",
+    "width": 276,
+    "height": 225,
+    "srcSet": null
+  },
+  "/images/services/icon-chart.webp": {
+    "src": "/images/services/icon-chart.webp",
+    "width": 276,
+    "height": 225,
+    "srcSet": null
+  },
+  "/images/services/icon-document.png": {
+    "src": "/images/services/icon-document.webp",
+    "width": 284,
+    "height": 335,
+    "srcSet": null
+  },
+  "/images/services/icon-document.webp": {
+    "src": "/images/services/icon-document.webp",
+    "width": 284,
+    "height": 335,
+    "srcSet": null
+  },
+  "/images/services/icon-home.png": {
+    "src": "/images/services/icon-home.webp",
+    "width": 281,
+    "height": 268,
+    "srcSet": null
+  },
+  "/images/services/icon-home.webp": {
+    "src": "/images/services/icon-home.webp",
+    "width": 281,
+    "height": 268,
+    "srcSet": null
+  },
+  "/images/services/icon-key.png": {
+    "src": "/images/services/icon-key.webp",
+    "width": 278,
+    "height": 304,
+    "srcSet": null
+  },
+  "/images/services/icon-key.webp": {
+    "src": "/images/services/icon-key.webp",
+    "width": 278,
+    "height": 304,
+    "srcSet": null
+  },
+  "/images/services/icon-people.png": {
+    "src": "/images/services/icon-people.webp",
+    "width": 340,
+    "height": 255,
+    "srcSet": null
+  },
+  "/images/services/icon-people.webp": {
+    "src": "/images/services/icon-people.webp",
+    "width": 340,
+    "height": 255,
+    "srcSet": null
+  },
+  "/images/services/icon-star.png": {
+    "src": "/images/services/icon-star.webp",
+    "width": 293,
+    "height": 309,
+    "srcSet": null
+  },
+  "/images/services/icon-star.webp": {
+    "src": "/images/services/icon-star.webp",
+    "width": 293,
+    "height": 309,
+    "srcSet": null
+  },
+  "/images/services/icon-users.png": {
+    "src": "/images/services/icon-users.webp",
+    "width": 305,
+    "height": 317,
+    "srcSet": null
+  },
+  "/images/services/icon-users.webp": {
+    "src": "/images/services/icon-users.webp",
+    "width": 305,
+    "height": 317,
+    "srcSet": null
+  },
+  "/images/services/living-room.png": {
+    "src": "/images/services/living-room.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/living-room-480w.webp 480w, /images/services/living-room-960w.webp 960w, /images/services/living-room.webp 1448w"
+  },
+  "/images/services/living-room.webp": {
+    "src": "/images/services/living-room.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/living-room-480w.webp 480w, /images/services/living-room-960w.webp 960w, /images/services/living-room.webp 1448w"
+  },
+  "/images/services/note-detail.png": {
+    "src": "/images/services/note-detail.webp",
+    "width": 1600,
+    "height": 960,
+    "srcSet": "/images/services/note-detail-480w.webp 480w, /images/services/note-detail-960w.webp 960w, /images/services/note-detail.webp 1600w"
+  },
+  "/images/services/note-detail.webp": {
+    "src": "/images/services/note-detail.webp",
+    "width": 1600,
+    "height": 960,
+    "srcSet": "/images/services/note-detail-480w.webp 480w, /images/services/note-detail-960w.webp 960w, /images/services/note-detail.webp 1600w"
+  },
+  "/images/services/note-hero.png": {
+    "src": "/images/services/note-hero.webp",
+    "width": 1600,
+    "height": 800,
+    "srcSet": "/images/services/note-hero-480w.webp 480w, /images/services/note-hero-960w.webp 960w, /images/services/note-hero.webp 1600w"
+  },
+  "/images/services/note-hero.webp": {
+    "src": "/images/services/note-hero.webp",
+    "width": 1600,
+    "height": 800,
+    "srcSet": "/images/services/note-hero-480w.webp 480w, /images/services/note-hero-960w.webp 960w, /images/services/note-hero.webp 1600w"
+  },
+  "/images/services/pricing-reference.png": {
+    "src": "/images/services/pricing-reference.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/pricing-reference-480w.webp 480w, /images/services/pricing-reference-960w.webp 960w, /images/services/pricing-reference.webp 1448w"
+  },
+  "/images/services/pricing-reference.webp": {
+    "src": "/images/services/pricing-reference.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/services/pricing-reference-480w.webp 480w, /images/services/pricing-reference-960w.webp 960w, /images/services/pricing-reference.webp 1448w"
+  },
+  "/images/services/rental-contracts.png": {
+    "src": "/images/services/rental-contracts.webp",
+    "width": 1568,
+    "height": 1003,
+    "srcSet": "/images/services/rental-contracts-480w.webp 480w, /images/services/rental-contracts-960w.webp 960w, /images/services/rental-contracts.webp 1568w"
+  },
+  "/images/services/rental-contracts.webp": {
+    "src": "/images/services/rental-contracts.webp",
+    "width": 1568,
+    "height": 1003,
+    "srcSet": "/images/services/rental-contracts-480w.webp 480w, /images/services/rental-contracts-960w.webp 960w, /images/services/rental-contracts.webp 1568w"
+  },
+  "/images/services/rental-reference.png": {
+    "src": "/images/services/rental-reference.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/rental-reference-480w.webp 480w, /images/services/rental-reference-960w.webp 960w, /images/services/rental-reference.webp 1600w"
+  },
+  "/images/services/rental-reference.webp": {
+    "src": "/images/services/rental-reference.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/services/rental-reference-480w.webp 480w, /images/services/rental-reference-960w.webp 960w, /images/services/rental-reference.webp 1600w"
+  },
+  "/images/services/rental-viewing.png": {
+    "src": "/images/services/rental-viewing.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/services/rental-viewing-480w.webp 480w, /images/services/rental-viewing-960w.webp 960w, /images/services/rental-viewing.webp 1536w"
+  },
+  "/images/services/rental-viewing.webp": {
+    "src": "/images/services/rental-viewing.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/services/rental-viewing-480w.webp 480w, /images/services/rental-viewing-960w.webp 960w, /images/services/rental-viewing.webp 1536w"
+  },
+  "/images/team/anna-uricarova.png": {
+    "src": "/images/team/anna-uricarova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/anna-uricarova.webp": {
+    "src": "/images/team/anna-uricarova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/eva-prochazkova.png": {
+    "src": "/images/team/eva-prochazkova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/eva-prochazkova.webp": {
+    "src": "/images/team/eva-prochazkova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/iva-dokoupilova.png": {
+    "src": "/images/team/iva-dokoupilova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/iva-dokoupilova.webp": {
+    "src": "/images/team/iva-dokoupilova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/jaroslav-bejdak.png": {
+    "src": "/images/team/jaroslav-bejdak.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/jaroslav-bejdak.webp": {
+    "src": "/images/team/jaroslav-bejdak.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/leona-kocikova.png": {
+    "src": "/images/team/leona-kocikova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/leona-kocikova.webp": {
+    "src": "/images/team/leona-kocikova.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/marcela-svakova.png": {
+    "src": "/images/team/marcela-svakova.webp",
+    "width": 900,
+    "height": 633,
+    "srcSet": null
+  },
+  "/images/team/marcela-svakova.webp": {
+    "src": "/images/team/marcela-svakova.webp",
+    "width": 900,
+    "height": 633,
+    "srcSet": null
+  },
+  "/images/team/radek-mezl.png": {
+    "src": "/images/team/radek-mezl.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/radek-mezl.webp": {
+    "src": "/images/team/radek-mezl.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/reference.png": {
+    "src": "/images/team/reference.webp",
+    "width": 500,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/reference.webp": {
+    "src": "/images/team/reference.webp",
+    "width": 500,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/tomas-prochazka.png": {
+    "src": "/images/team/tomas-prochazka.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/images/team/tomas-prochazka.webp": {
+    "src": "/images/team/tomas-prochazka.webp",
+    "width": 675,
+    "height": 900,
+    "srcSet": null
+  },
+  "/projects/apartmany-ricky.webp": {
+    "src": "/projects/apartmany-ricky.webp",
+    "width": 1536,
+    "height": 960,
+    "srcSet": "/projects/apartmany-ricky-480w.webp 480w, /projects/apartmany-ricky-960w.webp 960w, /projects/apartmany-ricky.webp 1536w"
+  },
+  "/projects/bell-house-brodek.webp": {
+    "src": "/projects/bell-house-brodek.webp",
+    "width": 1536,
+    "height": 960,
+    "srcSet": "/projects/bell-house-brodek-480w.webp 480w, /projects/bell-house-brodek-960w.webp 960w, /projects/bell-house-brodek.webp 1536w"
+  },
+  "/projects/domy-ustin.webp": {
+    "src": "/projects/domy-ustin.webp",
+    "width": 1536,
+    "height": 960,
+    "srcSet": "/projects/domy-ustin-480w.webp 480w, /projects/domy-ustin-960w.webp 960w, /projects/domy-ustin.webp 1536w"
+  },
+  "/projects/muslovske-vinohrady.webp": {
+    "src": "/projects/muslovske-vinohrady.webp",
+    "width": 1536,
+    "height": 960,
+    "srcSet": "/projects/muslovske-vinohrady-480w.webp 480w, /projects/muslovske-vinohrady-960w.webp 960w, /projects/muslovske-vinohrady.webp 1536w"
+  },
+  "/projects/penzion-lansperk.webp": {
+    "src": "/projects/penzion-lansperk.webp",
+    "width": 1536,
+    "height": 960,
+    "srcSet": "/projects/penzion-lansperk-480w.webp 480w, /projects/penzion-lansperk-960w.webp 960w, /projects/penzion-lansperk.webp 1536w"
+  },
+  "/images/presentation/property-presentation-supplied.webp": {
+    "src": "/images/presentation/property-presentation-supplied.webp",
+    "width": 1122,
+    "height": 1402,
+    "srcSet": "/images/presentation/property-presentation-supplied-480w.webp 480w, /images/presentation/property-presentation-supplied-960w.webp 960w, /images/presentation/property-presentation-supplied.webp 1122w"
+  }
+}

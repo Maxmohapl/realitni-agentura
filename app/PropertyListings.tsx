@@ -1,4 +1,5 @@
 'use client';
+import OptimizedImage from '@/components/OptimizedImage';
 
 import { useEffect, useMemo, useState } from 'react';
 import type { CSSProperties } from 'react';
@@ -51,6 +52,7 @@ export default function PropertyListings({
   mode = 'preview',
 }: PropertyListingsProps) {
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [loadState, setLoadState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [properties, setProperties] = useState<Property[]>(legacyProperties);
   const isFull = mode === 'full';
   const [activeCategory, setActiveCategory] = useState<PropertyFilter>('Vše');
@@ -68,8 +70,8 @@ export default function PropertyListings({
     fetch('/api/properties', { signal: controller.signal })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('Properties unavailable')))
       .then((data) => data as { properties?: Property[] })
-      .then((data) => { if (data.properties?.length) setProperties(data.properties); })
-      .catch((error) => { if (error instanceof Error && error.name !== 'AbortError') console.error('Property list refresh failed'); });
+      .then((data) => { if (!Array.isArray(data.properties)) throw new Error('Invalid properties response'); setProperties(data.properties); setLoadState('ready'); })
+      .catch(() => { if (!controller.signal.aborted) setLoadState('error'); });
     return () => controller.abort();
   }, []);
 
@@ -208,7 +210,7 @@ export default function PropertyListings({
                   onClick={() => selectCategory(filter)}
                 >
                   {filter !== 'Vše' && (
-                    <img src={propertyCategoryIcons[filter]} alt="" />
+                    <OptimizedImage src={propertyCategoryIcons[filter]} alt="" />
                   )}
                   <span>{filter}</span>
                   <small>{count}</small>
@@ -322,7 +324,7 @@ export default function PropertyListings({
             >
               <a className="property-card__link" href={`/nemovitosti/${property.slug}`} aria-label={`Zobrazit nemovitost: ${property.title}`}>
               <div className="property-card__media">
-                <img src={primaryImage(property)?.url || '/images/services/hero-house.png'} alt={primaryImage(property)?.alt || property.title} />
+                <OptimizedImage loading="lazy" src={primaryImage(property)?.url || '/images/services/hero-house.webp'} alt={primaryImage(property)?.alt || property.title} />
                 <span className="property-card__badge">
                   {property.status === 'RESERVED' ? 'Rezervováno' : transactionLabels[property.transactionType]}
                 </span>
@@ -331,7 +333,7 @@ export default function PropertyListings({
               <div className="property-card__body">
                 <h3>{property.title}</h3>
                 <p className="property-card__location">
-                  <img src="/assets/realitni/icon_location_pin.png" alt="" />
+                  <OptimizedImage src="/assets/realitni/icon_location_pin.webp" alt="" />
                   <span>{[property.location.cityPart, property.location.city].filter(Boolean).join(', ') || 'Lokalita na vyžádání'}</span>
                 </p>
                 <p className="property-card__meta">{[propertyTypeLabels[property.propertyType].replace(/y$|í$/, ''), primaryArea(property) ? `${primaryArea(property)} m²` : null, property.disposition].filter(Boolean).join(' | ')}</p>
@@ -343,9 +345,10 @@ export default function PropertyListings({
         </div>
 
         {visibleProperties.length === 0 && (
-          <div className="properties-empty">
-            <h2>{properties.length === 0 ? 'Aktuálně připravujeme nové nabídky' : 'Nic jsme nenašli'}</h2>
-            <p>{properties.length === 0 ? 'Brzy zde zveřejníme aktuální nemovitosti.' : 'Zkuste ubrat některý filtr nebo vyčistit zadání.'}</p>
+          <div className="properties-empty" role="status">
+            <h2>{loadState === 'loading' ? 'Načítáme nabídku nemovitostí…' : loadState === 'error' ? 'Nabídku se nepodařilo načíst' : properties.length === 0 ? 'Aktuálně připravujeme nové nabídky' : 'Nic jsme nenašli'}</h2>
+            <p>{loadState === 'loading' ? 'Vyčkejte prosím chvíli.' : loadState === 'error' ? 'Obnovte stránku nebo nás kontaktujte. Rádi vám s výběrem pomůžeme.' : properties.length === 0 ? 'Kontaktujte nás a pomůžeme vám s hledáním nemovitosti.' : 'Zkuste ubrat některý filtr nebo vyčistit zadání.'}</p>
+            {properties.length === 0 && loadState !== 'loading' && <a className="properties-load" href="/kontakt?sluzba=Koup%C4%9B%20nemovitosti">Poptat nemovitost</a>}
             {properties.length > 0 && (
             <button
               className="filters-reset"
@@ -392,15 +395,15 @@ export default function PropertyListings({
         </div>
       </div>
 
-      <img
+      <OptimizedImage
         className="properties-cityline"
-        src="/assets/realitni/01_city_olomouc_lineart.png"
+        src="/assets/realitni/01_city_olomouc_lineart.webp"
         alt=""
         aria-hidden="true"
       />
-      <img
+      <OptimizedImage
         className="properties-slogan"
-        src="/assets/realitni/02_slogan_vas_domov_nase_starost.png"
+        src="/assets/realitni/02_slogan_vas_domov_nase_starost.webp"
         alt=""
         aria-hidden="true"
       />
