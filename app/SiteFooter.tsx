@@ -10,6 +10,6 @@ export default function SiteFooter() {
    <div><h2>Kontakt</h2><address><span><MapPin />Lazecká 57/6, 779 00 Olomouc</span><a href="tel:+420734688825"><Phone />+420 734 688 825</a><a href="mailto:info@realitni-agentura.cz"><Mail />info@realitni-agentura.cz</a></address></div>
    <div className="site-footer__reach"><h2>Jsme tu pro vás</h2><p>Prodej, pronájem<br />a financování nemovitostí.</p><a href="/kontakt">Napište nám →</a></div>
   </div>
-  <div className="site-footer__bottom"><div>© {new Date().getFullYear()} Realitní agentura. Všechna práva vyhrazena.<p>{company.name} · IČO: {company.ico}<br />Sídlo: {company.address}<br />{company.register}</p></div><a href="/pravni-informace">Provozovatel a informace pro spotřebitele</a></div>
+  <div className="site-footer__bottom"><div>© {new Date().getFullYear()} Realitní agentura. Všechna práva vyhrazena.<p>{company.name} · IČO: {company.ico}<br />Sídlo: {company.address}<br />{company.register}</p></div><div className="site-footer__legal-links"><a href="/pravni-informace">Provozovatel a informace pro spotřebitele</a><a href="/podminky-zpracovani-udaju">Podmínky zpracování údajů</a></div></div>
  </footer>;
 }

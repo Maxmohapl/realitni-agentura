@@ -1,4 +1,5 @@
 'use client';
+import InquiryPrivacyNotice from '@/components/InquiryPrivacyNotice';
 import { useState } from 'react';
 import { submitPropertyInquiry, type PropertyInquiry } from '@/lib/properties/inquiry';
 
@@ -16,6 +17,7 @@ export default function PropertyInquiryForm({ context, agentEmail }: { context: 
     <label>Zpráva<textarea name="message" rows={4} defaultValue={`Dobrý den, mám zájem o nemovitost ${context.propertyTitle}.`} /></label>
     <button className="properties-load" type="submit">Připravit e-mail</button>
     <p className="property-inquiry__note">Tlačítko otevře připravenou zprávu ve vaší e-mailové aplikaci. Odeslání potvrdíte sami.</p>
+    <InquiryPrivacyNotice />
     {prepared && <p role="status">Zpráva je připravená ve vaší e-mailové aplikaci.</p>}
   </form>;
 }

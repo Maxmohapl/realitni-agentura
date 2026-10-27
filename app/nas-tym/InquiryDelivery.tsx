@@ -1,4 +1,5 @@
 'use client';
+import InquiryPrivacyNotice from '@/components/InquiryPrivacyNotice';
 import { useEffect, useRef, useState } from 'react';
 import { inquiryRecipient, prepareInquiryEmail } from '@/lib/inquiries/message';
 
@@ -67,6 +68,7 @@ export default function InquiryDelivery({ kind, values, photos = [] }: { kind: s
    } catch (error) { setMessage(error instanceof Error ? error.message : 'Odeslání nebylo potvrzeno. Kontaktujte nás e-mailem.'); }
    finally { lock.current = false; setBusy(false); setToken(''); if (widget.current) window.turnstile?.reset(widget.current); }
   }}>{!configured ? 'Načítám formulář…' : busy ? 'Odesílám…' : sent ? 'Odesláno' : enabled ? 'Odeslat poptávku' : 'Připravit e-mail'}</button>
+  <InquiryPrivacyNotice />
   {message && <output style={{ display: 'block' }}>{message}</output>}
   <p className="team-inquiry-form__hint">Kontakt: <a href={`mailto:${inquiryRecipient}`}>{inquiryRecipient}</a></p>
  </div>;
