@@ -1962,10 +1962,10 @@
   pointer-events: none;
 }
 .services-hero__note {
-  top: calc(100% - 58px);
-  left: 76%;
-  width: 200px;
-  transform: rotate(-10deg);
+  top: calc(100% - 30px);
+  left: 35%;
+  width: clamp(120px, 10vw, 160px);
+  transform: none;
 }
 .services-hero__visual {
   position: absolute;
@@ -2610,7 +2610,7 @@
 .legal-services__finance { display: grid; grid-template-columns: 140px minmax(0, 1fr) 310px; gap: 40px; align-items: center; padding: 44px 48px; border-radius: 28px; background: #eff6ff; }
 .legal-services__finance > .legal-services__icon { width: 90px; height: 94px; }
 .legal-services__finance > div { position: relative; }
-.legal-services__finance > div::before { content: ''; position: absolute; top: 0; bottom: 0; left: -40px; width: 1px; background: #c4d8ff; }
+
 .legal-services__finance h3 { margin: 0 0 10px; color: #050e22; font-size: clamp(25px, 2.3vw, 39px); font-weight: 850; line-height: 1.15; letter-spacing: -0.045em; }
 .legal-services__finance p { margin: 0; color: #536685; font-size: clamp(17px, 1.3vw, 22px); line-height: 1.4; }
 .legal-services__finance a { display: flex; align-items: center; justify-content: flex-end; gap: 36px; align-self: stretch; border-left: 1px solid #c4d8ff; color: #07132a; font-weight: 800; font-size: 18px; }
@@ -3236,3 +3236,9 @@ img { max-width: 100%; }
 .inquiry-privacy-notice a { color: #175a9e; text-decoration: underline; text-underline-offset: 3px; }
 .inquiry-privacy-notice a:focus-visible { outline: 2px solid #175a9e; outline-offset: 3px; border-radius: 2px; }
 .site-footer__legal-links { display: flex; flex-direction: column; gap: 10px; }
+
+.review-author { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin-top:16px; font-size:14px; }
+.review-author img { border-radius:50%; }
+.review-author small { flex-basis:100%; color:#53657a; }
+
+.properties-section--preview .properties-cityline { width: 100%; max-width: none; opacity: 1; }

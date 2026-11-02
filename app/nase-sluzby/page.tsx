@@ -1,8 +1,10 @@
 import OptimizedImage from '@/components/OptimizedImage';
 import type { Metadata } from 'next';
-import { ArrowRight, KeyRound, Home, UsersRound, Star, Camera, ImageIcon, SquarePlay, Drone, ChartColumnIncreasing, MapPin, FileText, ShieldCheck, PencilLine, Coins } from 'lucide-react';
+import { ArrowRight, KeyRound, Camera, ImageIcon, SquarePlay, Drone, ChartColumnIncreasing, MapPin, FileText } from 'lucide-react';
 import SiteHeader from '../SiteHeader';
 import ServiceCarousel from './ServiceCarousel';
+import JourneyIcon from './JourneyIcon';
+import AgencyStats from '../AgencyStats';
 
 export const metadata: Metadata = {
   title: 'Naše služby | Realitní Agentura',
@@ -57,23 +59,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="services-hero__stats" aria-label="Statistiky služeb">
-            <div>
-              <Home strokeWidth={1.8} aria-hidden="true" />
-              <strong>250+</strong>
-              <span>prodaných nemovitostí</span>
-            </div>
-            <div>
-              <UsersRound strokeWidth={1.8} aria-hidden="true" />
-              <strong>15+ let</strong>
-              <span>zkušeností na trhu</span>
-            </div>
-            <div>
-              <Star strokeWidth={1.8} aria-hidden="true" />
-              <strong>98 %</strong>
-              <span>spokojených klientů</span>
-            </div>
-          </div>
+          <AgencyStats compact />
         </div>
       </section>
 
@@ -113,7 +99,7 @@ export default function ServicesPage() {
           <h2 id="pricing-title">Správné nacenění, které <span>rozhoduje.</span></h2>
           <div className="property-pricing__layout">
             <div className="property-pricing__visual">
-              <OptimizedImage src="/images/services/pricing-reference.webp" alt="Makléř s klienty porovnává tržní data a cenu nemovitosti. Reálná data pro lepší rozhodnutí." loading="lazy" />
+              <OptimizedImage src="/images/services/pricing-house-corrected.png" width={1536} height={1024} alt="Dům s vyznačenými prvky ovlivňujícími cenu: atraktivní lokalita, moderní technologie, vyhřívaná podlaha a garáž nebo parkování." loading="lazy" />
             </div>
             <div className="property-pricing__copy">
               <p className="property-pricing__lead">Správná cena nemovitosti vychází z detailní znalosti trhu, lokality, stavu nemovitosti a aktuální poptávky. Dobře nastavená cena přitahuje vážné zájemce a pomáhá maximalizovat výslednou hodnotu prodeje.</p>
@@ -133,37 +119,52 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <section className="legal-services" aria-labelledby="legal-title">
+      <section className="legal-services legal-services--journey" id="jak-to-probiha" aria-labelledby="legal-title">
         <div className="legal-services__shell">
-          <div className="legal-services__top">
+          <div className="journey-heading">
             <div className="legal-services__intro">
+              <p className="journey-eyebrow">Jak to probíhá</p>
               <h2 id="legal-title">Postaráme se<br />o veškeré <span>formality.</span></h2>
-              <p>Od přípravy smluv až po bezpečné předání nemovitosti. Vy se nemusíte starat o žádné papírování – vše vyřídíme za vás, s důrazem na bezpečnost a právní jistotu.</p>
+              <p>Od prvního setkání po předání klíčů. Jasný plán, vyřízené papírování a jistota v každém kroku.</p>
             </div>
-            <div className="legal-services__cards">
-              {[
-                { Icon: FileText, title: 'Příprava smluv', text: 'Rezervační, kupní i nájemní smlouvy na míru.' },
-                { Icon: ShieldCheck, title: 'Právní kontrola', text: 'Ověření dokumentů a právní stav nemovitosti.' },
-                { Icon: PencilLine, title: 'Komunikace s úřady', text: 'Katastr, přepisy a veškeré úřední záležitosti.' },
-                { Icon: KeyRound, title: 'Bezpečné předání', text: 'Zajistíme hladký průběh až do předání klíčů.' },
-              ].map(({ Icon, title, text }) => (
-                <article className="legal-services__card" key={title}>
-                  <span className="legal-services__icon"><Icon size={36} strokeWidth={1.8} aria-hidden="true" /></span>
-                  <h3>{title}</h3><p>{text}</p>
-                </article>
-              ))}
-            </div>
+            <OptimizedImage className="journey-house" src="/images/services/journey-house-terrace.png" width={1774} height={887} alt="Rodinný dům se zahradou a terasou" loading="lazy" />
           </div>
-          <div className="legal-services__process">
-            <ol aria-label="Postup právního servisu">
-              {['Příprava dokumentů', 'Kontrola a konzultace', 'Podpis smluv', 'Předání nemovitosti'].map((step, index) => (
-                <li key={step}><span>{index + 1}</span><p>{step}</p></li>
+          <div className="journey-steps">
+            <svg className="journey-road" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M90 60 H1325 C1455 60 1455 205 1325 205 H100 M100 205 C0 205 0 350 100 350 H1350" fill="none" stroke="#d2dfed" strokeWidth="32" />
+              <path d="M90 60 H1325 C1455 60 1455 205 1325 205 H100 M100 205 C0 205 0 350 100 350 H1350" fill="none" stroke="white" strokeWidth="2" strokeDasharray="8 10" />
+            </svg>
+            <ol aria-label="Postup spolupráce">
+              {[
+                { title: 'Vaše představy', text: 'Ujasníme si cíle, potřeby a termín.' },
+                { title: 'Reálná cena', text: 'Oceníme podle trhu a lokality.' },
+                { title: 'Plán prodeje', text: 'Zvolíme cenu, postup a cílovou skupinu.' },
+                { title: 'První dojem', text: 'Fotografie, video a 3D prohlídka.' },
+                { title: 'Nabídka na očích', text: 'Realitní portály, sociální sítě i naše databáze.' },
+                { title: 'Správný zájemce', text: 'Prohlídky a prověření zájemců.' },
+                { title: 'Dohoda a rezervace', text: 'Podmínky obchodu a rezervační smlouva.' },
+                { title: 'Smlouvy a úschova', text: 'Právní kontrola a bezpečí vašich peněz.' },
+                { title: 'Převod vlastnictví', text: 'Katastr a komunikace s úřady.' },
+                { title: 'Předání klíčů', text: 'Protokol, energie a vše připravené.' },
+              ].map(({ title, text }, index) => (
+                <li className="journey-step" key={title}>
+                  <span className="journey-step__number">{index + 1}</span>
+                  <span className="journey-step__icon"><JourneyIcon step={index} /></span>
+                  <div><h3>{title}</h3><p>{text}</p></div>
+                </li>
               ))}
             </ol>
           </div>
-          <div className="legal-services__finance">
-            <span className="legal-services__icon"><Coins size={36} strokeWidth={1.8} aria-hidden="true" /></span>
-            <div><h3>Pomůžeme vám i s financováním.</h3><p>Ve spolupráci s ověřenými partnery zajistíme nejvýhodnější hypotéku nebo jiné financování přesně podle vašich potřeb.</p></div>
+          <div className="legal-services__finance" id="financovani-spoluprace">
+            <span className="legal-services__icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M13.744 17.736a6 6 0 1 1-7.48-7.48" />
+              <circle cx="16" cy="8" r="6" />
+              <g strokeWidth="1.1">
+                <path d="M17.5 6h-2.2a1 1 0 0 0 0 2h1.4a1 1 0 0 1 0 2h-2.2M16 5v6" />
+                <g transform="rotate(-30 8 16)"><path d="M9.5 14H7.3a1 1 0 0 0 0 2h1.4a1 1 0 0 1 0 2H6.5M8 13v6" /></g>
+              </g>
+            </svg></span>
+            <div><h3>Financování na míru.</h3><p>S ověřenými partnery najdeme hypotéku nebo jiné financování podle vašich potřeb.</p></div>
             <a href="/financovani"><span>Více o financování</span><i><ArrowRight size={26} aria-hidden="true" /></i></a>
           </div>
         </div>

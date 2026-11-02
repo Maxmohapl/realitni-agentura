@@ -397,7 +397,10 @@ export default function PropertyListings({
 
       <OptimizedImage
         className="properties-cityline"
-        src="/assets/realitni/01_city_olomouc_lineart.webp"
+        src={isFull ? "/assets/realitni/01_city_olomouc_lineart.webp" : "/images/olomouc-home-panorama.png"}
+        width={isFull ? undefined : 2048}
+        height={isFull ? undefined : 683}
+        loading="lazy"
         alt=""
         aria-hidden="true"
       />

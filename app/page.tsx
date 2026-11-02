@@ -6,16 +6,13 @@ import {
   ArrowRight,
   Check,
   ChevronLeft,
-  Handshake,
-  Home,
   Mail,
   Phone,
-  TrendingUp,
-  UsersRound,
 } from 'lucide-react';
 import PropertyListings from './PropertyListings';
 import SiteHeader from './SiteHeader';
 import GoogleReviews from './GoogleReviews';
+import AgencyStats from './AgencyStats';
 
 type Agent = {
   id: string;
@@ -53,7 +50,7 @@ const agents: Agent[] = [
   },
   {
     id: 'iva-dokoupilova',
-    name: 'Iva Dokoupilová',
+    name: 'Bc. Iva Dokoupilová',
     role: 'realitní makléřka',
     phone: '+420 724 035 099',
     email: 'iva.dokoupilova@realitni-agentura.cz',
@@ -85,7 +82,7 @@ const agents: Agent[] = [
   },
   {
     id: 'radek-mezl',
-    name: 'Bc. Radek Mézl',
+    name: 'Bc. Radek Mézl, MBA',
     role: 'majitel realitní kanceláře',
     phone: '+420 734 760 779',
     email: 'radek.mezl@realitni-agentura.cz',
@@ -149,29 +146,6 @@ const agents: Agent[] = [
   },
 ];
 
-const stats = [
-  {
-    icon: Home,
-    value: '250+',
-    label: 'Prodaných nemovitostí za poslední rok',
-  },
-  {
-    icon: UsersRound,
-    value: '8 + 1',
-    label: 'Osm makléřů a jeden právník',
-  },
-  {
-    icon: Handshake,
-    value: '98 %',
-    label: 'Spokojených klientů doporučuje dál',
-  },
-  {
-    icon: TrendingUp,
-    value: '15+ let',
-    label: 'Zkušeností na trhu s nemovitostmi',
-  },
-];
-
 const services = [
   {
     title: 'Prodej nemovitosti',
@@ -190,23 +164,7 @@ const services = [
     ],
   },
   {
-    title: 'Koupě nemovitosti',
-    description: 'Najděte nemovitost bez zbytečného rizika.',
-    icon: '/images/service-icons/blue_house_and_red_key_icon-cropped.webp',
-    accent: 'blue',
-    href: '/nase-sluzby?sluzba=koupe#prodej-nemovitosti',
-    points: [
-      'Vyhledání nemovitosti',
-      'Analýza lokality a dostupnosti',
-      'Konzultace financování a hypotéky',
-      'Prověření technického stavu',
-      'Právní kontrola a smlouvy',
-      'Přepis energií a služeb',
-      'Předání nemovitosti',
-    ],
-  },
-  {
-    title: 'Pronájem nemovitosti',
+    title: 'Pronájem a správa nemovitosti',
     description: 'Pronajměte bezpečně a správnému člověku.',
     icon: '/images/service-icons/blue_building_and_red_user_icon-cropped.webp',
     accent: 'mixed',
@@ -219,6 +177,23 @@ const services = [
       'Nájemní smlouvy a dokumentace',
       'Předávací protokol a měřidla',
       'Přepisy energií a služeb',
+      'Správa nemovitosti',
+    ],
+  },
+  {
+    title: 'Nacenění nemovitosti',
+    description: 'Zjistěte, jakou hodnotu má vaše nemovitost.',
+    icon: '/images/service-icons/blue_house_and_red_key_icon-cropped.webp',
+    accent: 'blue',
+    href: '/kontakt?typ=naceneni',
+    points: [
+      'Orientační ocenění zdarma',
+      'Porovnání s místním trhem',
+      'Posouzení lokality a stavu',
+      'Zohlednění dispozice a plochy',
+      'Doporučení nabídkové ceny',
+      'Konzultace s makléřem',
+      'Nezávazně a bez provize',
     ],
   },
 ];
@@ -376,26 +351,7 @@ export default function HomePage() {
 
         <a className="home-team-button button button--primary" href="/nas-tym">Náš tým <ArrowRight size={18} aria-hidden="true" /></a>
 
-        <aside className="hero-stats" aria-label="Statistiky realitní agentury">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
-
-            return (
-              <div className="stat" key={stat.value}>
-                <Icon
-                  className="stat__icon"
-                  size={34}
-                  strokeWidth={1.9}
-                  aria-hidden="true"
-                />
-                <div>
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
-              </div>
-            );
-          })}
-        </aside>
+        <AgencyStats />
       </section>
 
       <section
@@ -405,12 +361,10 @@ export default function HomePage() {
       >
         <div className="services-shell">
           <h2 id="services-title">
-            Od prvního rozhodnutí až po předání <span>klíčů.</span>
+            S námi je to <span>jednodušší.</span>
           </h2>
           <p className="services-intro">
-            Ať prodáváte, kupujete nebo pronajímáte, provedeme vás celým
-            procesem. Od správné ceny a prezentace až po smlouvy, financování a
-            bezpečné předání.
+            Kompletní realitní služby od prvního rozhodnutí až po úspěšné dokončení.
           </p>
 
           <div className="service-grid">
